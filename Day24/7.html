@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		var provs=["江苏省","安徽省","山东省"];
+		var cities=[
+			["南京市","徐州市","苏州市"],
+			["滁州市","合肥市","蚌埠市"],
+			["青岛市","济南市","临沂市"]
+			
+		]
+		function getCitiesByProv(prov){
+			//声明变量p,初始化为-1,用于保存找到的省份位置下标.
+			var p=-1;
+			//遍历provs中每个元素,
+			for (var i=0;i<provs.length;i++){
+				//如果当前省份=prov
+				if(provs[i]==prov){
+					p=i;//将i赋值给p
+					break;//退出循环	
+				}	
+			}//(遍历结束)
+			if(p!=-1){//如果p不等于-1时
+				//遍历cities中下标为p的字数组
+				for (var c=0;c<cities[p].length;c++){	
+					console.log(String(cities[p][c]));//输出cities中当前位置元素	
+				}
+				
+			}
+			else{//否则
+				console.log("无效省份")//输出无效省份
+			}
+				
+		}
+		getCitiesByProv(prompt("请输入省份的名称"));
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

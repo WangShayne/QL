@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		Object.clone=function(obj){
+			
+		}
+		var emp{
+			eid:1001,
+			ename:"scott",
+			toString:function(){
+				console.log("我是Emp的");
+				var str="{";
+				for(var key in this){
+					if(typeof(this[key]!="function")){
+						str+=key+":"+this
+					}
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

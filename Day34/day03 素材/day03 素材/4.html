@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>表单提交验证</title>
+<meta charset="utf-8" />
+<style>
+	.hintText{color: #aaaaaa; font-style: italic; }
+	.normalText { color: #000000;}
+</style>
+<script>
+	function nameFocus(txtName){//响应姓名文本框获得焦点
+		//如果txtName的内容失去空格后为""或"请输入您的姓名"
+		var reg=/^(\s*|请输入您的姓名)$/;
+		if(reg.test(txtName.value.trim())){
+			//清楚txtName的内容
+			txtName.value="";
+			//清楚txtName的class
+			txtName.className="";
+		}
+	}
+	function valiName(txtName){//响应姓名文本框失去焦点
+		//如果txtName的内容失去空格后为""或"请输入您的姓名"
+		var reg=/^(\s*|请输入您的姓名)$/;
+		if(reg.test(txtName.value.trim())){
+			//设置txtName的class为hintText
+			txtName.className="hintText";
+			//设置 txtName的内容为"请输入您的姓名"
+			txtName.value="请输入您的姓名";
+			return false;
+		}
+		return true;
+	}
+	function contentFocus(txtContent){
+		var reg=/^(\s*|请输入留言内容)$/;
+		if(reg.test(txtContent.value.trim())){
+			//清楚txtName的内容
+			txtContent.value="";
+			//清楚txtName的class
+			txtContent.className="";
+		}
+	}
+	function valiContent(txtContent){
+		var reg=/^(\s*|请输入留言内容)$/
+		if(reg.test(txtContent.value.trim())){
+			//设置txtName的class为hintText
+			txtContent.className="hintText";
+			//设置 txtName的内容为"请输入您的姓名"
+			txtContent.value="请输入留言内容";
+			return false;
+		}
+		return true;
+	}
+	function valiAll(){
+		//获得msgForm下的表单,保存在变量form中
+		var form=document.msgForm
+		//获得form下 name为userName的元素,保存在变量txtName中
+		var txtName=form.userName
+		//调用valiName方法,传入txtName作为参数,将返回值保存在变量r中
+		var r=valiName(txtName);
+		//如果r为false,
+		if(r==false){
+			//提示:姓名不能为空
+			alert("姓名不能为空");
+			//就让txtName获得焦点
+			txtName.focus();
+		}
+		else{//否则
+			//获得form下的name为content的元素,保存在变量txtContent中
+			var txtContent=form.content;
+			//调用valiContent的方法,传入txtContent作为参数,将返回值保存早r中
+			r=valiContent(txtContent)
+			//如果r为false
+			if(r==false){
+				//提示:留言内容不能为空
+				alert("留言内容不能为空");
+				//让txtContent获得焦点
+				txtContent.focus();
+			}
+			else{//否则
+				//手动提交form
+				document.forms[0].submit();
+			}
+		}
+
+				
+	}
+</script>
+
+</head>
+<body>
+	<h2>发表留言</h2>
+<form name="msgForm">
+	姓名：<input name="userName" class="hintText" 
+				onfocus="nameFocus(this)"
+				onblur="valiName(this)"
+				value="请输入您的姓名"/>
+		  <span>姓名不能为空</span><br />
+				
+	内容：<textarea name="content" class="hintText" 
+					rows="5" cols="30"
+					onfocus="contentFocus(this)"
+					onblur="valiContent(this)"
+					style="resize:none">请输入留言内容</textarea><br />
+	<label>
+		<input type="checkbox" onclick="document.forms['msgForm'].elements[3].disabled=!this.checked"/>我已阅读了《常见问题列表》
+	</label><br/>
+	<input type="button" onclick="valiAll(this)" disabled="disabled" value="提交"/>
+</form>
+</body>
+</html>

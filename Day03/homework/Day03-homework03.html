@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Day03-homework03</title>
+</head>
+
+<body>
+  	<!-- 头部 -->
+	<header>
+		<h2>增加管理员</h2>
+	</header>
+	<!-- 中部表单 -->
+	<section>
+		<form method="post" action="">
+			<table cellpadding="5px" >
+				<tr>
+					<td>姓名:</td>
+					<td><input type="text" maxlength="10" name="username"></td>
+					<td>10个字符以内</td>
+				</tr>
+				<tr>
+					<td>密码:</td>
+					<td><input type="password" maxlength="10" name="password"></td>
+					<td>10个字符以内</td>
+				</tr>
+				<tr>
+					<td>性别:</td>
+					<td>
+						<input  id="gender1" type="radio" name="gender" value="female"><label for="gender1">女士</label>
+						<input id="gender2" type="radio" name="gender" value="male"><label for="gender2">男士</label>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>角色:</td>
+					<td>
+						<input id="admin1" type="checkbox" name="admin" value="superadmin"><label for="admin1">超级管理员</label><br>
+
+						<input id="admin2" type="checkbox" name="admin" value="listadmin"><label for="admin2">账单管理员 </label>
+						
+					</td>
+					<td>至少选择一个角色</td>
+				</tr>
+				<tr>
+					<td>头像:</td>
+					<td><input type="file" name="file" value="选择文件" style="width:170px"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="submit" value="保存">
+						<input type="reset" name="reset" value="重填">
+					</td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+	</section>
+
+</body>
+</html>

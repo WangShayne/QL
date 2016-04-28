@@ -1,0 +1,71 @@
+ <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function daysInMonth(y,m){
+		      
+			/*  三目
+			alert(  
+			//如果m是2//如果y是闰年 返回29,否则返回28
+			m==2?((y%4==0 && y%100!=0) || (y%400==0)? "29" : "28") 
+			//如果m是4或6或9或11//返回30
+			:
+			m==4||m==6||m==9||m==11?"30"
+			//否则返回31
+			:
+			"31"
+			)   */
+
+			/*
+			//	if	 else
+			//如果m是2
+				if (m==2){
+					//如果y是闰年 返回29,否则返回28
+					if (y%4==0 && y%100!=0 || y%400==0)
+					{
+						alert("29");
+					}
+					else{
+						alert("28");
+					}
+				}
+				//如果m是4或6或9或11		
+				else if (m==4 || m==6 || m==9 || m==11)
+				{
+					alert("30");	       //返回30
+				}
+				else{
+					alert("31");
+				}
+			//否则返回31
+			*/
+			//  switch-case
+			switch (m)
+			{
+				case "2":
+					(y%4==0 && y%100!=0) || y%400==0 ? alert("29"):alert("28");
+					break;
+				case "4" :
+				case "6" :
+				case "9" :
+				case "11" :  
+					alert("30");
+					break;
+				default :
+					alert("31");
+			}
+		}
+		daysInMonth(prompt("请输入年份"),prompt("请输入月份"));
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

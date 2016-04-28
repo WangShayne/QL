@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//定义构造函数,
+		//实现公有属性(public)和私有属性(private)
+			//公有属性:可用对象.直接访问的属性
+			//私有属性:仅在对象内部可访问的属性
+				//在js中其实就是局部变量
+		function Emp(ename,eage){
+			this.ename=ename//公有的	
+			//var eage 私有的
+			Object.defineProperty(this,"eage",{
+			get:function(){
+				return eage;
+			},
+			set:function(value){
+				if(value>=18&&value<=65){
+				eage=value;
+				}else{
+					throw new Error("年龄必须介于18~65之间");
+				}
+			},
+			enumerable:true,configurable:true
+			})
+			this.eage=eage;
+		}
+		var e1=new Emp("sb",32);
+		console.log(e1.eage)
+		e1.eage++;
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

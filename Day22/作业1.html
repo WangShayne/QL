@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//判定成绩
+		function fun(score){
+			//如果输入的值小于0或大于100
+			if (score<0 || score >100)
+			{
+				console.log("成绩无效") //在控制台输出"成绩无效"
+			}	
+			//否则 如果成绩在80以上,
+			else if (score>=80)
+			{
+				console.log("优秀")	//输出成绩"优秀"
+			}
+			//否则 如果成绩在60以上,
+			else if (score>=60)
+			{
+				console.log("及格")	  //输出"及格"
+			}	
+			//否则 
+			else {
+				console.log("不及格")	//输出"不及格"
+			}
+		}
+		fun(prompt("请输入成绩"))
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

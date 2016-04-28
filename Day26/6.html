@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//1.将验证码用到的字符存储在一个数组中
+		var chars=[];
+		//将"0"~"9"压入数组
+		
+		//u从?开始,到?结束,每次u+1;
+		for(var u=48;u<58;u++){
+			//将u转为字符,压入chars中;
+			chars.push(String.fromCharCode(u));
+		}
+		//将"A"~"Z"压入数组
+		//u从?开始,到?结束,每次u+1;
+		for(var u=65;u<90;u++){
+			//将u转为字符,压入数组chars中
+			chars.push(String.fromCharCode(u));
+		}
+		//将"a"~"z"压入数组
+		for(var u=97;u<122;u++){//u从?开始,到?结束,每次u+1
+			//将u转为字符,压入数组chars中
+			chars.push(String.fromCharCode(u));
+		}
+		console.log(String(chars));
+		//2.获得一个验证码
+		function getCode(){
+			//c从1开始,到4结束.每次增1,同时声明空字符串code.
+			for(var c=1,i=0,code="";c<=4;c++){
+				//在0~chars.length-1生成一个随机位置i
+				i=parseInt(Math.random()*chars.length)
+				//将chars中i位置的字符拼接到code上,
+				code+=chars[i]
+				
+			}//遍历结束后,返回code
+			return code;
+		}
+		console.log(getCode())
+		//3.请用户反复输入,如果输错,就更换验证码
+		//调用getCode();获得验证码,保存在变量code中
+			alert(code=getCode());
+		//反复提示用户验证码,并请用户输入,和code验证
+		//如果输入不等于code.	
+			while(prompt("请输入验证码")!=code){
+			//提示 验证码错误,请重新输入
+			//调用getCode();获得验证码,保存在变量code中
+			alert("验证码错误!请重新输入"+(code=getCode()))
+			}  //(循环结束)
+		
+		document.write("验证通过")
+		
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

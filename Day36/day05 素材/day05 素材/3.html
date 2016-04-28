@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>事件处理</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/3.css"/>
+		<script>
+			function hightLight(e){//点到哪个div,就把当前div背景改为黄色,并提示当前div的id
+				//
+				e=e||window.event;
+				var target=e.target||e.srcElement;
+				//讲当前div的背景色改为yellow
+				this.style.backgroundColor="yellow";
+				//弹出提示:当前div的id
+				alert(this.id+";"+target.id);
+				//将当前div的背景色改为""
+				this.style.backgroundColor="";
+				//e.stopPropagation();
+			}
+			window.onload=function(){
+				d1.addEventListener("click",hightLight,false);
+				d2.addEventListener("click",hightLight,false);
+				d3.addEventListener("click",hightLight,false);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1" class="d1">
+			<div id="d2" class="d2">
+				<div id="d3" class="d3">
+				</div>
+			</div>
+		</div>
+	
+	</body>
+</html>

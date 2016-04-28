@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>打开新链接方式总结</title>
+		<script>
+			/*打开新链接方式总结：
+1. 在当前窗口打开，可后退
+		<a href="http://tmooc.cn">在当前窗口打开,可后退</a><br>
+2. 在当前窗口打开，禁止后退
+
+3. 在新窗口打开，可重复打开
+		<a href="http://tmooc.cn" target="_blank"> 在新窗口打开，可重复打开</a><br>
+4. 在新窗口打开，不可重复打开
+
+*/
+
+
+function open1(){ // 在当前窗口打开，可后退
+	window.open("http://tmooc.cn","_self")
+}
+function open2(){
+	location.replace("http://tmooc.cn")
+}
+function open3(){//在新窗口打开，可重复打开 
+	window.open("http://tmooc.cn")/* * * * * * * target默认_blank * * * * * * */
+}
+function open4(){//在新窗口打开，不可重复打开
+	window.open("http://tmooc.cn","tmooc")
+}
+		</script>
+	</head>
+	<body>
+		<a href="http://tmooc.cn" target="_self">1在当前窗口打开,可后退</a><br>
+		<a href="javascript:open1()"> 1在当前窗口打开,可后退 jsjsjsjsjs</a><br>
+
+		<a href="javascript:open2()">2在当前窗口打开,禁止后退</a><br>
+
+		<a href="http://tmooc.cn" target="_blank"> 3在新窗口打开，可重复打开</a><br>
+		<a href="javascript:open3()"> 3在新窗口打开，可重复打开 jsjsjsjsjs</a><br>
+		<a href="http://tmooc.cn" target="tmooc"> 4 在新窗口打开，不可重复打开</a><br>
+		<a href="javascript:open4()"> 4 在新窗口打开，不可重复打开jsjsjsjsjs</a><br>
+	</body>
+</html>

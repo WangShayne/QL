@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function add(){
+			if(arguments.length==0){
+				console.log("请输入需要求和的数值")
+			}
+			else{
+				for(var i=0,sum=0;i<arguments.length;i++){
+					sum+=Number(arguments[i])+0;
+				}
+			}
+			return sum;
+		}
+		console.log(add())
+		console.log(add(0));
+		console.log(add(1));
+		console.log(add(1,1));
+		console.log(add(1,2));
+		console.log(add(1,2,3));
+		console.log(add(1,2,3,4));
+		console.log(add(1,2,3,4,5));
+		console.log(add(1,2,3,4,5,6,7));
+		console.log(add(1,2,3,4,5,6,7,8));
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

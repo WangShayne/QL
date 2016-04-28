@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//如果浏览器启用了cookie
+		window.onload=function(){
+		var h1=document.createElement("h1");
+	
+		if(navigator.cookieEnabled){
+			//在网页中输出h1标签,内容为"已启用cookie,请妥善保存个人信息"
+			h1.innerHTML="已启用cookie,请妥善保存个人信息"
+		}
+		//否则
+		else{
+			//在网页中输出h1标签,内容"cookie已禁用,自动登录功能无法使用"
+			h1.innerHTML="cookie已禁用,自动登录功能无法使用"
+		}
+		document.body.appendChild(h1);
+		}
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,29 @@
+history:保存当前窗口打开后,访问过的url的历史记录栈
+
+history(n)
+
+location 保存当前窗口正在打开的url的信息
+    protocol 协议:前的协议名 http https ftp smtp
+    host 主机名和端口号
+    hostname 主机名
+    port 端口号  http如果端口号为"" 默认是80
+    pathname 相对路径名
+    search 获得?及之后的查询字符串的参数列表
+
+    open("url","_self")
+    location.href="url"
+    location="url"
+    location.arrign("url")
+
+    在当前窗口打开新连接,禁止后退
+    location.replace("url");
+
+    刷新
+    location.reload(force)
+                    false//优先从服务器缓存中快速获取
+                        //除非缓存中文件和硬盘文件修改时间不一致,才会再次去硬盘获取
+                    true//强制服务器绕过缓存,始终读硬盘
+
+    navigator
+        .cookieEnabled 检查cookie是否开启
+        .plugins 封装

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function Flyer(sname,speed){
+			this.sname=sname;
+			this.speed=speed;
+		}
+		Flyer.prototype.fly=function(){
+			console.log(this.sname+"牌飞机"+"以"+this.speed+"光年的速度飞行")
+		}
+		function Bee(sname,speed,sward){
+			Flyer.apply(this,arguments);
+			this.sward=sward
+		}
+		Bee.prototype.get=function(){
+			console.log("获得奖励"+this.sward)
+		}
+		Object.setPrototypeOf(Bee.prototype,Flyer.prototype)
+		var bee=new Bee("老司机",180,"油条一根")
+		bee.fly();
+		bee.get();
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

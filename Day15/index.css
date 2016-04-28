@@ -1,0 +1,19 @@
+p[id]{
+    border:1px solid red;
+}
+p[id="summary"]{
+    background-color: pink;
+}
+p[class~="warning"]{
+    font-size: 20pt;
+}
+p[title^="f"]{
+    font-size: 15pt;
+}
+p[title*="con"]{
+    font-size: 20pt;
+}
+p[title$="rd"]{
+    font-size: 25pt;
+}
+

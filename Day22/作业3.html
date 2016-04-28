@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//计算出生的日期是一年中的第几天
+		function oneDay(year,month,day){
+			//判断闰年和平年
+			var nian;
+			var tian;
+			nian=(year%4==0 && year%100!=0 || year%400==0);
+			//如果是1月
+			if (month==1)
+			{
+				tian=day;
+				alert("您的出生日期在"+year+"年中是第"+tian+"天")//输出 day
+			}	
+			//否则 如果是二月
+			else if (month==2)
+			{
+				tian=31+parseFloat(day);
+				alert("您的出生日期在"+year+"年中是第"+tian+"天")     //输出 31+day
+			}	
+			//否则 如果是三月
+			else if (month==3)
+			{
+				tian=31+nian?29:28+parseFloat(day);
+				alert("您的出生日期在"+year+"年中是第"+tian+"天") 
+			}
+				//输出 31+29或28+day
+			//否则 如果是四月
+				//输出 31+29或28+31+day
+			//否则 如果是五月
+				//输出 31+29或28+31+30+day
+			//否则 如果是六月
+				//输出 31+29或28+31+30+31+day
+			//否则 若果是七月
+				//输出 31+29或28+31+30+31+30+day
+			//否则 如果是八月
+				//输出 31+29或28+31+30+31+30+31+day
+			//否则 如果是九月
+				//输出 31+29或28+31+30+31+30+31+31+day
+			//否则 如果是十月
+				//输出 31+29或28+31+30+31+30+31+31+30+day
+			//否则 如果是十一月
+				//输出 31+29或28+31+30+31+30+31+31+30+31+day
+			//否则 如果是十二月
+				//输出 31+29或28+31+30+31+30+31+31+30+31+30+day
+		}
+		oneDay(prompt("请输入您的出生年份"),prompt("请输入您的出生月份"),prompt("请输入您的出生日期"))
+	</script>
+	
+</head>
+
+<body>
+  
+</body>
+</html>

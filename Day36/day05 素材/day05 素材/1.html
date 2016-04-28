@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>事件处理</title>
+<meta charset="utf-8" />
+<script>
+	var search=location.search;
+	//如果search不是空字符串,
+	if(search!=""){
+		//截取search从位置1到结尾的子字符串,再按&切割,将结果保存在数组params中
+		var params=search.slice(1).split("&");
+		//创建一个空对象,param
+		var param={};
+			//遍历params中每个参数字符串
+			for(var i=0;i<params.length;i++){
+				//将params中单前参数字符串按=切割没保存在变量arr中
+				var arr=params[i].split("=");
+				//在param中添加一个新属性,属性名为arr中第一个元素,属性值为arr中第二个元素
+				param[arr[0]]=arr[1]
+				//将对象param替换到params中,当前位置的元素
+				}
+			console.log(param)
+	}//
+	window.onload=function(){
+		time.innerHTML=new Date().toLocaleTimeString();
+		//每隔8秒重新加载当前页面,要求绕过缓存.
+		// 1 setInterval(function(){location.reload(true)},8000);
+		// 2 setInterval("location.reload(true)",8000);
+		setInterval(location.reload.bind(location,true),8000);
+	}
+</script>
+</head>
+<body>
+	<h1 id="time"></h1>
+ 	<form>
+		姓名:<input name="username"/>
+		密码:<input type="password" name="pwd"/>
+		<input type="submit"/>
+	</form>
+	<!--2. 实现不能后退的页面跳转-->
+	<button >go to tmooc</button>
+</body>
+</html>

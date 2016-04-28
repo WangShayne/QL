@@ -1,0 +1,44 @@
+zhaoxu@tedu.cn
+
+
+		 1
+		 HTML5Basic
+		 CSS3Basic
+		 WEB UI
+		 CSS3Core
+		 JavascriptBasic
+
+	开发型			
+				 2
+				 Javascript
+
+				 3
+				 jQuery框架
+				 HTML5core
+				 服务器端
+				 Ajax
+
+				 4
+				 Bootstrap:CSS框架
+				 AngularJS:JS框架
+				 微信开发
+
+	设计型
+				 第二阶段
+					WEB UI:设计网页+实现
+				 第三阶段
+					JavaScript
+				 第四阶段
+					HTML5Core
+					Ajax
+					jQuery
+					Bootstrap
+					微信开发
+					
+				学习方法:
+					练:写代码
+					背:背效果
+					     背单词
+
+
+

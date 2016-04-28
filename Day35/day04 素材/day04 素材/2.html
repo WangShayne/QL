@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	 <head>
+		  <title>小游戏：点不到的小窗口</title>
+		  <meta charset="utf-8"/>
+	 </head>
+	 <body>
+		  <script>
+		  var game={
+			maxTop:0,//保存小窗口可用的最大top
+			maxLeft:0,//保存小窗口可用的最大left
+			WSIZE:100,//保存小窗口的大小 
+			OFFSET:0,//完成窗口大小和文档显示区大小的差
+			pop:null,//保存弹出的新窗口对象
+			init:function(){
+				//当前对象的OFFSET:当前窗口的高-文档显示区的高
+				this.OFFSET=window.outerHeight-window.innerHeight;
+				//当前对象的maxTop:屏幕的高-WSIZE
+				this.maxTop=screen.availHeight-this.WSIZE-this.OFFSET;
+				//当前对象的maxLeft:屏幕的宽-WSIZE
+				this.maxLeft=screen.availWidth-this.WSIZE;
+				//随机生成top,在0~maxTop之间取一个随机数,保存在变量t中
+				var t=parseInt(Math.random()*this.maxTop+1);
+				//随机生成left,在0~maxLeft之间取一个随机数,保存在变量l中
+				var l=parseInt(Math.random()*this.maxLeft+1);
+				//定义配置字符串,config:
+				var config="top="+t+",left="+l+",width="+this.WSIZE+",height="+this.WSIZE
+					//"top=t+OFFSET,left=?width=WSIZE,height=WSIZE,"
+				//打开新窗口,设置url为about:blank设置name为_blank,设置config为config字符串
+				this.pop=
+								window.open("about:blank","_blank",config);
+								var img=new Image();
+								//设置img的src为E:/xiaoxin.gif
+								img.src="E:/xiaoxin.gif"
+								//设置img的宽为80px;
+								img.style.width="80px"
+								//为img绑定onclick:提示"约么"
+								img.onclick=function(){
+									alert("约么");
+								}
+								//将img追加到pop中的document的body下
+								this.pop.document.body.appendChild(img)
+				//为pop绑定鼠标进入时间为function(e)
+				var me=this;
+				me.pop.onmouseover=function(e){
+					//获得鼠标相当于整个屏幕的x坐标,保存在x中
+						var x=e.screenX;
+					//获得鼠标相当于整个屏幕的y坐标,保存在y中
+						var y=e.screenY; 
+					//反复生成随机位置
+					for(;;){
+						//随机生成top,在0~maxTop之间取一个随机数,保存在变量t中
+						var t=parseInt(Math.random()*me.maxTop+1);
+						//随机生成left,在0~maxLeft之间取一个随机数,保存在变量l中
+						var l=parseInt(Math.random()*me.maxLeft+1);
+						//如果!(x大于l而且x小于l+outerWidth,)
+						if(!(x>l&&x<l+this.outerWidth)&&(y>t&&y<t+this.outerHeight)){
+								//而且t<y<t+outerHeihgt
+							//将pop移动到t,l的位置
+							this.moveTo(t,l)
+							break;//退出循环
+						}
+					}
+					
+				}
+			},
+		  }
+		  window.onload=function(){game.init();}
+		  </script>
+	 </body>
+</html>

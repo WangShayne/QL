@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		if(Array.isArray===undefined){
+			Array.isArray=function(arr){
+				return (Object.prototype.toString.call(arr)==="[object Array]")?true:false
+			}
+		}
+		//如果浏览器不支持isArray
+		//给?添加isArray方法
+			//强行调用原始toString方法，和"[object Array]"比较
+	document.write(Array.isArray([]));//true
+	document.write("<br>")
+	document.write(Array.isArray(new Array()));//false
+	document.write("<br>")
+	document.write(Array.isArray(17));
+	document.write("<br>")
+	document.write(Array.isArray(function(){}));
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

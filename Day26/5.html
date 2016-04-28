@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function doubleBall(){
+			//for(var c=0;c<=10;c++){
+			var reds=[];
+			var blue=0;
+			//反复红球,reds.length<6
+			while (reds.length<6){
+				//在1~33之间生成一个随机整数,保存在r中.
+				var r=parseInt(Math.random()*33+1);
+				//如果reds中没找到r,
+				if(reds.indexOf(r)==-1){
+					//如果没有找到,就将r压入reds中.
+					reds.push(r);	
+				}
+			}//循环结束
+			//在1-16之间生成一个随机整数,保存在blue中.
+			blue=parseInt(Math.random()*16+1)
+			//将reds按数字升序sort排序
+			reds.sort(function compare(a,b){return a-b;});
+			//输出 String(reds)+""+blue;
+			console.log(String(reds)+"|"+blue+";    ");
+			//}
+		}
+	</script>
+</head>
+
+<body>
+  <button onclick="doubleBall()">机选</button>
+</body>
+</html>

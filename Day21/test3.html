@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	function jisuan(btn){
+		//定义一个变量来表示个人所得税
+		var shui=0
+		//初始化一个变量input 
+		var input="";
+		//接收1个数据
+		input=prompt("请输入您的收入");
+		//if判断
+		if (input<=3500)//如果3500元以下部分免征 
+		{
+			shui=0;
+		}
+		else if (input<=5000) //3500~5000的部分缴纳3%的个税 
+		{
+			shui=(input-3500)*0.03;	
+		}
+		else if(input<=9000)//5000~9000的部分缴纳10%的个税 
+		{
+			shui=(input-5000)*0.1;
+		}
+		else	//9000以上的部分缴纳20%的个税 
+		{
+			shui=(input-9000)*0.2;
+		}
+			//返回应缴纳的个人所得税金额
+		alert("你需要交"+parseFloat(shui));
+		console.log(parseFloat(shui));
+	}
+	
+
+	</script>
+</head>
+
+<body>
+  	   <input type="button" name="jisuan" id="jisuan" value="计算个人所得税" onclick="jisuan(this)">
+</body>
+</html>

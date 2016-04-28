@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		/*var reply=prompt("输入回复:")
+		var reg=/[我卧握](了个)?[去艹草操槽]/;
+		var i=reply.search(reg);
+		if (i!=-1){
+			alert("ok 非常好")
+		}else{
+			document.write(reply)
+		}*/
+
+		/*var msg="那天,我去了她家,我说:卧槽,你家真大.她想和我去草地野餐.她说我去去就来.我草草的收拾了草坪";
+		//var msg="我的天呐,我你妈是什么东西啊??"
+		var reg=/[我卧][去草操艹槽{1,2}]/g;
+		var kwords=msg.match(reg);
+		if (kwords!=null){
+			document.write("共发现"+kwords.length+"个敏感词\n"+String(kwords))
+		}else{
+			document.write(msg);
+		}*/
+		/*var str="we two who and who";
+		var reg=/who/ig;
+		str=str.replace(reg,"*5*");
+		console.log(str);*/
+
+		/*var str="one two three four five"
+		var i=4;
+		var reg=/\b[a-z]+\b/g;
+		str=str.replace(reg,function(kwords){
+			
+				return kwords="";
+		
+		});
+		console.log(str)*/
+
+		/*function ltrim(str){
+			var reg=/^\s+/g;
+			return str.replace(reg,"");
+		}
+		function rtrim(str){
+			var reg=/\s+$/g;
+			return str.replace(reg,"");
+		}
+		function trim(str){
+			var reg=/^\s+|\s+$/g;
+			return str.replace(reg,"")
+		}
+		function all(str){
+			var reg=/\s+/g;
+			return str.replace(reg,"")
+		}
+		var str="	 zhang dong		";
+		console.log(ltrim(str));
+		console.log(rtrim(str));
+		console.log(trim(str));
+		console.log(all(str));*/
+
+		/*var str="you need to cry dear";
+		var reg=/\s/ig;
+		var words=str.split(reg);
+		console.log(words);*/
+		
+	
+	</script>
+</head>
+
+<body>
+  <ul id="movies">
+	<li>疯狂动物城</li>
+	<li>火锅</li>
+	<li>小李子</li>
+	<li>二狗子</li>
+	<li>我 是你爸爸</li>
+  </ul>
+  <script>
+		var html=movies.innerHTML;
+		
+		ms=html.trim().slice(4,-5).split(/<\/li>\s*<li>/);
+		console.log(String(ms))
+  </script>
+</body>
+</html>

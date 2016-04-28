@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	var data=[
+		   // 0  1  2  3
+			[8,4,4,2],    //0
+			[4,16,8,4],	  //1
+			[2,2,8,4],	  //2
+			[4,4,8,2]     //3
+		];
+		function isGameOver(){
+			//遍历data中每个元素
+				for (var r=0;r<data.length;r++){
+					for(var c=0;c<data[r].length;c++){
+						//如果data中当前元素为0
+						if (data[r][c]==0){
+							return false;//返回false
+						}
+						//如果c<data中r行的.length-1,且当前元素==右侧元素
+						if ((c<data[r].length-1)&&(data[r][c]==data[r][c+1])){
+							return false//返回false
+						}	
+						//如果r<data的.length-1,且当前元素==下方元素的时候
+						if ((r<data.length-1) && (data[r][c]==data[r+1][c])){
+							return false//返回false
+						}
+					}
+				}//遍历结束	
+				return true;//返回ture
+			
+		}
+		console.log(isGameOver());
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

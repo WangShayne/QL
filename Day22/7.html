@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function bank(input){
+			switch(input){ //先判断input的值
+				case "1":  //如果input全等于"1"
+					alert("查询余额中");	//就弹出"查询余额中"
+					break;
+				case "2": //如果input全等于"2"
+					alert("请取出您的钞票");	//就弹出"请取出您的钞票"
+					break;
+				case "3" :	//如果input全等于"3"
+					alert("正在转账");	//就弹出"正在转账"
+					break;
+				case "0"://如果input全等于"0"
+					alert("欢迎下次再来");	//就弹出"欢迎下次再来"
+					break;
+				default ://	 否则
+					alert("按键无效");	
+					
+			}
+		}
+		bank(prompt("请按下按钮"))
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

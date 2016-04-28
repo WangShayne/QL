@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		/*var str="320381199406251694"
+		var gender=(str[str.length-2])%2!=0?"男":"女";
+		var date=str.slice(6,(str.length-4));
+
+		console.log(gender);
+		console.log(date);*/
+		var code="6ErC";
+		
+		//循环条件:input!=code;
+		//循环变量:input初始化为""
+		//循环体:请用户输入验证码(code),保存在input中
+		var input="";//如果输入错了,继续输入
+		//var lowerCode=code.toLowerCase();
+		//var upperCode=code.toUpperCase();
+		while((input=prompt("请输入验证码"+code)).toLowerCase()!=code.toLowerCase()){
+			alert("请继续输入");
+		}	
+		document.write("验证成功");
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

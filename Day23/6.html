@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function  fan(ln){
+			
+			
+			for (var r=1;r<=ln ;r++ )//r从1开始,到<=ln结束,每次增1
+			{
+				//i从1开始,到<=ln结束,每次增1,同时声明空str
+					
+					for (var i=1,str="";i<=ln ;i++)
+					{
+						str+=(i<=ln-r) ? " " :"*"	//向str中拼接字符:如果i<=r时拼空格,否则就拼"*"
+					}//遍历结束
+				console.log(str)//输出str
+			}	
+		}
+		fan(10);
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

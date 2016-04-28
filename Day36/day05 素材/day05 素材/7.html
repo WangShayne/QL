@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>根据页面滚动位置显示浮动框</title>
+	<link rel="stylesheet" href="css/7.css"/>
+	<script>
+		//为window绑定onscroll时间
+		window.onscroll=function(){
+			//获得当前页面的滚动距离scrollTop>=500?"block":"none"
+			var scrollTop=document.body.scrollTop;
+			console.log(scrollTop);
+			toTop.style.display=(scrollTop>=500?"block":"none")
+		}	
+		function getTop(elem){
+			//声明变量sum.初始为elem的offsetParent
+			var sum=elem.offsetTop
+			//反复判断elem的offsetParent不等于null
+			while(elem.offsetParent!=null){
+				//将elem.offsetParent的offsetTop累加到sum上
+				sum+=elem.offsetParent.offsetTop
+				//将elem换成elem的offsetParent
+				elem=elem.offsetParent
+				}	//遍历结束
+				return sum//返回sum
+			
+		}
+		window.onload=function(){
+			console.log(getTop(d1));//
+			console.log(getTop(d2));//
+			console.log(getTop(d3));//
+		}
+	</script>
+	<style>
+		*{margin:0;padding:0;}
+		#d1{
+			width:300px;
+			height:300px;
+			background-color:lightBlue;
+			position:relative;
+			top:100px;
+
+		}
+		#d2{
+			width:150px;
+			height:150px;
+			background-color:pink;
+			position:relative;
+			top:80px;
+
+		}
+		#d3{
+			width:50px;
+			height:50px;
+			background-color:lightYellow;
+			position:relative;
+			top:30px;
+
+		}
+	</style>
+ </head>
+ <body>
+	<div id="d1">
+		<div id="d2">
+			<div id="d3">
+			</div>
+		</div>
+	</div>
+	<button onclick="window.scrollTo(0,200)">200</button>
+	<button onclick="window.scrollTo(0,1000)">1000</button>
+	<button onclick="window.scrollTo(0,100)">100</button>
+	<div id="toTop">
+		<a href="#">返回顶部</a>
+	</div>
+ </body>
+</html>

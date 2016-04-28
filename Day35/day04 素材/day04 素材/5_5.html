@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>倒计时自动关闭/跳转页面</title>
+<meta charset="utf-8" />
+<script>
+	//定义函数myClose关闭当前窗口
+	function myClose(){
+		//将id为time的元素的内容转为整数,保存在变量n中
+		var n=parseInt(time.innerHTML);
+		//将n-1
+		n--;
+		//如果n==0
+		if(n>0){time.innerHTML=n+"秒钟后自动关闭";timer=setTimeout(myClose,1000)}else{window.close()}
+			//关闭页面
+		//否则
+			//将n+秒钟后自动关闭,在保存回time的内容中
+	}		
+	//当页面加载后,启动周期定时器,每隔1s执行
+	window.onload=function(){
+		timer=setTimeout(myClose,1000)
+	}
+
+	var timer=null;
+	/*window.onload=function(){
+		var i=5;
+			document.getElementsByTagName("span").innerHTML=(i--)+"秒后关闭页面"
+
+	}
+	timer=setInterval(window.onload,1000)
+	//定义函数,关闭当前窗口
+	function myClose(){
+		window.close();	
+	}
+	//当页面加载后,启动一次性定时器,等待5秒后执行myClose
+
+	//timer=setTimeout(myClose,5000)*/
+</script>
+</head>
+<body>
+	<span id="time">5秒钟后自动关闭</span><br>
+	<a href="javascript:clearTimeout(timer)">留在本页</a>
+</body>
+</html>

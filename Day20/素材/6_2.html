@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+</style>
+<script>
+	function calc(btn){
+		var td=btn.parentNode ;
+		var span=td.getElementsByTagName("span")[0];
+		var n=parseFloat(span.innerHTML);
+		if(btn.innerHTML=="-")
+		{	
+			if (n!=1)
+			{
+			n--;
+			}
+		}
+		else{
+			n++;
+		}
+		span.innerHTML=n;	 
+		//计算小计
+		//获得td的前一个元素的内容,转为浮点数,保存在变量price中
+		var price=parseFloat(td.previousElementSibling.innerHTML);
+			td.nextElementSibling.innerHTML=price*n;
+		
+		var tds=document.querySelectorAll("#data>tbody>tr>td:last-child"); 
+		var total=0;
+		
+			for (var i=0;i<tds.length;i++)
+			{
+				total=total+parseFloat(tds[i].innerHTML);	
+			}
+		document.querySelector("#data>tfoot>tr>td:last-child").innerHTML=total; 
+		/*	var price=
+			parseFloat(td.previousElementSibling.innerHTML);
+		//计算小计: price*n,保存回td的下一个元素的内容中
+		td.nextElementSibling.innerHTML=price*n;
+
+		//计算总价:
+		//找到id为data的元素下的tbody下的tr下的最后一个td,将查询结果保存在变量tds中
+		var tds=document.querySelectorAll(
+			"#data>tbody>tr>td:last-child"
+		);
+		var total=0;//声明total变量，初始化为0
+		//遍历tds中每个td:i从0开始，到<length结束,i每次增1
+		for(var i=0;i<tds.length;i++){
+			//将当前td的内容，转为浮点数，+total，再保存回total中
+			total=total+parseFloat(tds[i].innerHTML);
+		}//(遍历结束)
+		//找到id为data的元素下的tfoot下的tr下的最后一个td，设置其内容为total
+		document.querySelector(
+			"#data>tfoot>tr>td:last-child"
+		).innerHTML=total;	  */
+	}
+
+
+</script>
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>4488</td>
+				<td>
+					<button onclick="calc(this)">-</button>
+					<span>1</span>
+					<button onclick="calc(this)">+</button>
+				</td>
+				<td>4488</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>5288</td>
+				<td>
+				<button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+				</td>
+				<td>5288</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>4288</td>
+			<td>
+			    <button onclick="calc(this)">-</button>
+				<span>1</span>
+				<button onclick="calc(this)">+</button>
+			</td>
+				<td>4288</td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td>14064</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

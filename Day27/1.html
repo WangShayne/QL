@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		/*var n=123.456;
+		try{
+			console.log(n.toFixed(prompt("输入数")))
+		}catch(err){//错误发生时,获得错误对象
+			console.log(err.message);	
+		}finally{
+			n=null;
+			console.log("释放空间n="+n)
+		}*/
+		var n=123.456;
+		var d=prompt("请输入小数位数");
+		if(isNaN(d)){
+			alert("会不会数学?")
+		}
+		else if(d<0||d>20){
+			alert("请输入0~20之间的数")
+		}else{
+			console.log(n.toFixed(d))
+		}
+		n=null;
+		console.log("释放内存"+n  )
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

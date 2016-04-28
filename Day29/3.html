@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	'use strict'
+		var emp={eid:1001,ename:"eric",salay:12000};
+		//查看emp对象的eid属性的四大特性
+		console.log(Object.getOwnPropertyDescriptor(emp,"eid"))
+		Object.defineProperty(emp,"eid",{
+		//	writable:false
+		})
+		emp.eid=1002;
+		console.log(emp.eid);
+		console.log(Object.getOwnPropertyDescriptor(emp,"eid"))
+		Object.defineProperty(emp,"salay",{
+			enumerable:false
+		})
+		for(var key in emp){
+			console.log(key+":"+emp[key])
+		}
+		Object.defineProperty(emp,"salay",
+		{configurable:false
+		})
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

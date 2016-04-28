@@ -1,0 +1,50 @@
+BOM
+
+1.window对象:
+    2个对象:1.代替ES标准中的Global.充当全局对象
+            2.封装了浏览器软件以及窗口的信息
+
+    打开窗口:window.open("url,"name")
+        其中:name属性是内存中窗口的名称
+             在打开窗口时,才赋值        
+
+    打开连接:
+            1.替换当前窗口内容,可以后退
+                html:<a href="url" [target="_self"]>
+                js  :window.open("url","_self")   
+            2.替换当前窗口内容,禁止后退
+                html:没法做
+                js  :location.replace("url")
+            3.在新窗口打开,可重复打开多个
+                html:<a href="url" [target="_blank"]>
+                js  :window.open("url","_blank")   
+            4.在新窗口打开,值能打开一个
+                html:<a href="url" [target="name"]>
+                js  :window.open("url","name")  
+
+    窗口大小和窗口位置
+    窗口大小:
+        完整窗口大小:window.outerHeight/outerWidth
+        文档显示区大小:window.innerHeight/innnerWidth
+    调整窗口大小:
+        1.在打开窗口时:
+        var config="top=?,left=?,height=?,width=?";
+        window.open("url","name",config)
+        2.
+
+
+    如何使用定时器
+        1.***任务函数:定时器每次执行的任务
+            function task(){
+
+
+            }
+        2.将任务函数放入定时器,定时执行
+            timer=setInterval(任务函数task,interval间隔的毫秒数)
+            timer往往是一个全局变量,用来保存当前计时器的序号
+                序号是内存中唯一标识一项任务的编号
+            原理:首先将task函数对象和interval时间间隔记录在定时器对象中,再返回当前任务的序号
+                    然后定时器会按照指定时间间隔,将task函数定时加入回调队列(callback queue)
+                    只有ECS中没有正在执行的函数时,才将callbackqueue中的函数加入到ECS中
+        3.停止定时器
+            claerInterval(timer)

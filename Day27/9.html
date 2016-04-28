@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function factory(rate){//rate受保护的变量,从外部传入
+			//返回一个函数对象
+				return function(money){
+				//参数:接受要转换的人民币的钱数money
+					return (money*rate).toFixed(1)
+				}
+				//返回:(monney*rate).toFixed(2)
+		
+		
+		}
+		var rmb2$=factory(0.1639);
+		console.log(rmb2$(1000));
+		console.log(rmb2$(5000));
+		var rmb2Euro=factory(0.1449)
+		console.log(rmb2Euro(1000));
+		console.log(rmb2Euro(5000))
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

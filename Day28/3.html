@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//判断一个对象是不是数组类型,有几种方法
+		//typeof无法判断,智能判断原始类型的值和函数
+		
+		//1 --  obj.prototype.isPrototypeOf 检查整个原型链
+		
+		console.log(Array.prototype.isPrototypeOf([])?"是数组":"不是数组");
+		console.log(Array.prototype.isPrototypeOf({})?"是数组":"不是数组");
+		console.log(Array.prototype.isPrototypeOf(function(){})?"是数组":"不是数组");
+		//2 --  constructor==Array 备胎 检查指定对象的函数
+			console.log([].constructor==Array?"是数组":"不是数组")
+			console.log({}.constructor==Array?"是数组":"不是数组")
+
+		//3 -- instanceof 检查一个对象是否是制定构造函数的实例
+						//检查整个原型链
+		console.log(([] instanceof Array)?"是数组":"不是数组");
+		//4 -- 强行调用原始的toString方法 Object.prototype.toString.call(函数名) 
+		console.log(Object.prototype.toString.call([])=="[object Array]"?"是数组":"不是数组")
+		console.log(Object.prototype.toString.call({})=="[object Array]"?"是数组":"不是数组")
+		console.log(Object.prototype.toString.call(function(){})=="[object Array]"?"是数组":"不是数组")
+		console.log(Object.prototype.toString.call(/\d/)=="[object Array]"?"是数组":"不是数组")
+		//5 -- Array.isArray(obj) ????????????????????
+		console.log(Array.isArray([])?"是数组":"不是数组")
+		console.log(Array.isArray({})?"是数组":"不是数组")
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

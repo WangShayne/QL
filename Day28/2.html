@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		var arr=[12,2,32,23,14,1]
+		if(Array.prototype.indexOf===undefined){
+			Array.prototype.indexOf=function(val,fromi){
+			//this-arr
+			//如果fromi没有值,则初始化为0
+			(fromi===undefined)&&(fromi=0);
+			//i从fromi开始,遍历当前数组中每个元素
+			for(var i=fromi;i<this.length;i++){
+				//如果当前元素全的等于value
+				if (this[i]===val)
+				{
+					return i//返回i
+				}
+				
+			}//遍历结束
+			return -1;//返回-1
+			}
+		}
+		document.write(arr.indexOf(12,0))//0
+		document.write(arr.indexOf(10))//-1
+		document.write(arr.indexOf(10,6))//-1
+		document.write(arr.indexOf(1))//5
+		document.write(arr.indexOf(32,1))//2
+		document.write(arr.indexOf(14,0))//4
+
+					  //this
+		//如果浏览器不支持trim方法
+		if(String.prototype.trim===undefined){
+			//为String.prototype添加trim方法
+			String.prototype.trim=function(){
+				
+				//返回当前字符串去掉前后空格的结果
+				return this.replace(/^\s+|\s+$/g ,"")
+				/*if((this[0]==" ")||([this.length-1]==" ")){
+					this.splic(0,1)
+					this.splic(-1,1)
+					return this
+					
+				}*/
+				
+			}
+				
+		}
+			
+		var str=" zhang dong "
+		document.write("<br>|"+str+"|");
+		str=str.trim();
+		document.write("<br>|"+str+"|");
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

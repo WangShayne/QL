@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		try{/*var now=new Date();
+			var birth=new Date("1994/04/24");
+			var days=parseInt((now-birth)/24/3600/1000);
+			console.log(days)*/
+
+			var ruZhi=new Date("2012/6/30");
+			//将hiredate时间复制给到期时间
+			var daoQi=new Date(ruZhi);
+			//daoQi+3年
+			daoQi.setFullYear(daoQi.getFullYear()+3);
+			//将daoQi复制给新日期对象renewdate
+			var renewdate=new Date(daoQi)
+			//将renewdate-1月
+			renewdate.setMonth(renewdate.getMonth()-1)
+			//如果遇到renewdate是星期日,
+			
+				if(renewdate.getDay()==0){
+					renewdate.setDate(renewdate.getDate()-2)//就再-2天
+				}
+				
+			//否则如果renewdate是星期六,
+				else if(renewdate.getDay()==6){
+					renewdate.setDate(renewdate.getDate()-1)//就再-1天
+				}
+			//将renewdate复制给新日期对象,alertdate
+
+			var alertdate=new Date(renewdate);
+			//将alertdate-7天;
+			alertdate.setDate(renewdate.getDate()-7)
+			console.log("入职时间 :"+format(ruZhi));
+			console.log("到期时间 :"+format(daoQi));
+			console.log("续签时间 :"+format(renewdate));
+			console.log("提醒时间 :"+format(alertdate));
+
+			function format(date){
+				//创建数组days:["日","一"..."六"]
+				var days=["日","一","二","三","四","五","六"];
+				//获得年份,保存在y中
+				var y=date.getFullYear();
+				//获得月份,+1后保存在M中
+				var M=date.getMonth()+1;
+				//如果获得M<10,就变为0+M
+				if(M<10){M="0"+M}
+				//获得日期,保存在d中
+				var d=date.getDate();
+				//如果d<10,就变为0+d
+				if(d<10){d="0"+d}
+				//获的星期,再获的days中星期对应的汉字,保存在day中
+				var day;
+				day=days[date.getDay()]
+				//console.log(y+"年"+M+"月"+d+"日 星期"+day);
+
+				//获得小时,保存在h中
+				var h=date.getHours();
+				//声明变量am,如果h>=12,就赋值为"下午",否则赋值为"上午"
+				var am;
+				h>=12?am="下午":am="上午";
+				//如果h>12,输出h-12
+				if(h>12){
+					h="0"+(h-12);
+				}
+				//如果h<10,就变为0+h
+				else if(h<10){
+					h="0"+h;
+				}
+				//获的分钟,保存在m中,
+				var m=date.getMinutes();
+				//如果m<10,就变为0+m,
+				m<10&&(m="0"+m);
+				return y+"年"+M+"月"+d+"日 星期"+day+" "+am+h+":"+m;
+
+			}
+			var c=new Date();
+			console.log(format(c))
+		}
+		catch(error){
+			alert("sorry,爆炸了!")
+		}
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

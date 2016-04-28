@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	/*	function checkPlugin(pname){
+			//遍历navigator中的plugins数组
+			for(var key in navigator.plugins){
+				//如果当前插件对象的name属性和pname相同
+				if(navigator.plugins[key].name==pname){
+					//在页面输出h1元素,内容为"已安装pname插件"
+					return document.write("<h1>已安装"+pname+"插件</h1>");
+					//退出函数
+				}
+			}//遍历结束
+			//在页面输出h1元素,内容为"未安装pname插件,请下载"
+			document.write("<h1>未安装"+pname+"插件,请下载</h1>");
+		}
+		checkPlugin("Shockwave Flash");
+		document.write("<br>")
+		checkPlugin("QQMusic");
+		*/
+		document.write("<h1>"+navigator.userAgent+"</h1 >")
+
+		/*判断当前浏览器是什么版本 只支持当前五大浏览器 IE9以上 firefox chrome Safari opera */
+		(function (){
+			//声明变量browser,初始化为字符串为"unknown"
+			var browser="unknown";
+			//声明变量agent=navigator.userAgent
+			var agent=navigator.userAgent;
+			//如果,agent中找到Firefox
+			//if(agent.indexOf("Firefox")!=-1)
+			if(/Firefox/.test(agent)){
+			
+				//就将browser的值改为firefox
+				browser="Firefox";
+			}
+			
+			//否则 如果agent找到MSIE
+			else if(/MSIE/.test(agent)){
+				//将browser的值改为MSIE
+					browser="MSIE";
+			}
+			//否则 如果agent找到OPR
+				else if(/OPR/.test(agent)){
+				//将browser的值改为Oprea
+				browser="Opera";
+			}
+			//否则 如果agent中找到Chrome
+			else if(/Chrome/.test(agent)){
+				//将browser的值改为Chrome
+				browser="Chrome";
+			}
+			//否则 如果agent中找到Safari
+			else if(/Safari/.test(agent)){
+				//将browser的值改为Safari
+				browser="Safari";
+			}
+			//否则 如果agent中找到Trident
+			else if(/Trident/.test(agent)){
+				//将browser的值改为Trident
+				browser="Trident";
+			}
+			//声明version变量,初始化为0
+			var version=0;
+			//如果brower不是unknown
+			if(browser!="unknown"){
+				//browser是IE
+				if(browser=="Trident"){
+					//找到agent中rv的位置,保存在变量i中
+					var i=agent.indexOf("rv");
+					//截取agent中i+3开始,到i+5结束的子字符串
+					version=agent.slice(i+3,i+5);
+					//保存在version中
+				}
+				else if(browser=="Opera"){//否则 如果browser是Opera
+					//找到agent中OPR的位置,保存在变量i中
+					i=agent.indexOf("OPR");
+					//截取agent中i+3开始,到i+5结束的子字符串,
+					version=agent.slice(i+4,i+6);
+					//保存在version中
+				}
+				//否则 
+				else{
+					//找到agent中browser 的位置,保存在变量i中
+					i=agent.indexOf(browser);
+					//计算开始位置starti:i+browser的长度+1
+					var stari=i+browser.length+1;
+					//截取agent中的starti,到stari+3结束的子字符串
+					version=parseFloat(agent.slice(stari,stari+3));
+				}
+			}
+			
+			document.write("<h1>正在使用"+browser+"浏览器,版本号为:"+version)
+		}());
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

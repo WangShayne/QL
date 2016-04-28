@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+    /*1. 声明计数器*/
+    /*2. 设置计数器增减*/
+    /*3. 使用计数器*/
+    body{
+        counter-reset:c1;
+    }
+    p{
+
+        counter-increment:c1 1 c2 5; 
+
+    }
+
+    p:before{
+        content:counter(c1)"、";
+        margin-right: 10px;
+    }
+    p:after{
+         content:counter(c2);
+        margin-right: 10px;
+    }
+    span{
+        counter-increment:x1 3;
+    }
+    span:before{
+        content:counter(x1);
+    }    
+</style>
+</head>
+<body>
+    <div>
+        <p>鹅鹅鹅,</p> 
+        <p>曲项向天歌</p>
+        <p>白毛浮绿水</p>
+        <P>铁锅炖大鳄鱼</P>
+    </div>  
+    <span>是是是</span>
+    <span>是是是</span>
+    <span>是是是</span>
+    <span>是是是</span>
+</body>
+</html>

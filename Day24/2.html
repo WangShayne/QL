@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		/*var arr=[11,11,34,44,53,21];
+		function compare(a,b){
+			return b-a;
+		}
+		arr.sort(compare);
+		console.log(String(arr));*/
+		
+		/*function peiliao(egg,oil)
+		{
+			return egg+oil
+			
+		}
+		function xhx(peiliao)
+		{	
+			var egg="鸡蛋";
+			var oil="油"
+			var xihongshi=peiliao(egg,oil)+"西红柿";
+			console.log(xihongshi)
+		}
+		xhx(peiliao);*/
+
+		//sort函数的逻辑
+		function sort(arr,compare)
+			//如果compare是undefined
+			if (compare===undefined){
+				//compare=function(a,b){}
+				function compare(a,b){
+					return String(a)>String(b)?1:
+						   String(a)<String(a)?-1:
+												0;
+				}
+				for (var r=1;r<arr.length ;r++){
+					if(arr[i]>arr[a+1])
+					{
+						arr[i+1]=[arr[i],arr[i]=arr[i+1]][0];
+					}
+				}
+			}
+				
+
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

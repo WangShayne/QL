@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//请用户输入身高(m),体重(kg),分别保存在变量height和weight中
+		var height=prompt("请输入您的身高"),
+		     weight=prompt("请输入您的体重");
+		//计算可莱托指数:体重/(身高的平方),保存在变量clt中
+		var clt=weight/(height*height);
+		//如果clt>25
+		if (clt>25){
+			//输出 胖
+			document.write("胖");
+		}
+		//否则 如果 clt>20
+		else if(clt>20){
+		       //输出 正常
+		       document.write("正常");
+		}
+		//否则 
+		else{
+			//输出 瘦
+			document.write("瘦");
+		}
+		
+
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

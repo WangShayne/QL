@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+    <style type="text/css">
+        body{
+            counter-reset: c1 0;
+        }
+        h1{
+            counter-increment:c1 1;
+            counter-reset:c2 0;
+        }
+        h1:before{
+            content: counter(c1);
+        }
+        h2{
+            counter-increment: c2 1;
+        }
+        h2:before{
+            content:counter(c1)"."counter(c2);
+        }
+    </style>
+</head>
+<body>
+    <h1>ggggggggg</h1>
+    <h2>ggggggg</h2>
+     <h2>ggggggg</h2>
+      <h2>ggggggg</h2>
+       <h2>ggggggg</h2>
+     <h1>ggggggggg</h1>
+    <h2>ggggggg</h2>
+     <h2>ggggggg</h2>
+      <h2>ggggggg</h2>
+       <h2>ggggggg</h2>
+</body>
+</html>

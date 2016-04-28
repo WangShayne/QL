@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//模拟收银台
+		//同时声明三个变量:单价(price),数量(count),收款金额(money)
+		var price,count,money;
+		//分别请用户输入单价,数量和收款金额,保存在以上三个变量中
+		price=prompt("请输入单价");
+		count=prompt("请输入数量");
+		money=prompt("请输入收款金额")
+		//计算总价:单价*数量,保存在变量total中
+		var total=price*count;
+		//如果总价超过500,就打8折,再保存回total中
+		if (total>=500){
+			total=total*0.8;
+		}
+		//计算找零:收款金额-总价,保存在变量change中
+		var change=money-total;
+		//如果change>=0
+		if (change>=0){
+			//输出 应收:total,找零change
+			document.write("应收:"+total+",收款:"+money+",找零:"+change);
+		}	
+		//否则
+		else{
+		       //输出 应收:total,还差:-change
+		       document.write("应收:"+total+",收款:"+money+",还差:"+(-change))
+		}
+			
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

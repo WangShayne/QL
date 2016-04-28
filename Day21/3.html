@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//判断字符
+		function check(char){
+			 char=prompt("请输入一个字符");
+			//如果char>="0",而且char<="9"	
+		        if (char>="0"&&char<="9")
+			{
+				alert("这是一个数字");//输出这是一个数字
+			}
+			//如果char>="A",而且char<="Z"  或  char>="a",而且char<="z"
+			else if (char>="A"&&char<="Z"||char>="a"&&char<="z")
+			{
+				alert("这是一个字母")//输出这是一个字母
+			}
+			//如果char>="\u4e00",而且char<="\u9fa5"
+			else if(char>="\u4e00"&&char<="\u9fa5")
+			{
+				alert("这是一个汉字")//输出是汉字
+			}
+			//否则
+			else
+			{
+				alert("这是其他字符")//输出"其他字符"
+			}
+		
+		}
+		check();
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

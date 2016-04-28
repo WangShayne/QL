@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//判断闰年
+		function isLeap(year){
+		       year=prompt("请输入年份")
+		//如果year可以被4整除,且不能被100整除,	 或者year可以被400整除,
+			if (year%4==0 && year%100!=0 || year%400==0)
+			{
+				alert(year+"是闰年") //  输出year是闰年
+			}			
+			//否则
+			else
+			{
+				alert(year+"是平年")  // 输出year是平年   
+			}
+				
+		}
+		isLeap();
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

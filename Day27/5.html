@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function checkout(){
+			//arguments:[]
+			//如果没有传入参数
+			if((arguments.length==0)){
+				console.log("扫描二维码")
+			}
+			//否则,如果传入了一个参数
+			else if(arguments.length==1){
+				console.log("收您现金:"+arguments[0])
+			}
+			//其他,如果传入了多个参数
+			else{
+				console.log("银行卡"+arguments[0]+"款项"+arguments[1]+"扣款成功")
+			}
+		}
+		checkout();
+		checkout(100);
+		checkout(1000121156560202,244);
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

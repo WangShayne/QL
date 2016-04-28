@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		/***** ***** ***** 公共样式 ***** ***** *****/
+		body{
+			margin:0;
+			padding:0;
+			font-size:12px;
+			font-family:"Microsoft Yahei","Arial","Helvetica",sans-serif;
+			color:#666;
+		}
+		header,#search,nav,#datu,#chuchuang,.floor,.paizi,#shaidan,#fuwu,footer{
+			border:1px solid red;
+		}
+		a,ul,ol,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd{
+			margin:0px;
+			padding:0px;
+			list-style:none;
+		}
+		a{
+			color:#6D6862;
+			text-decoration:none;
+		}
+		input{
+			border:none;
+		}
+		.lf{
+			float:left;
+		}
+		.rt{
+			float:right;
+		}
+		.clear{
+			clear:both;
+		}
+		/***** ***** ***** 定宽度 ***** ***** *****/
+		header{
+			width:100%;
+			
+		}
+		nav,#search,#datu,#chuchuang,.floor,.paizi,#shaidan,#fuwu{
+			width:1211px;
+			margin:0 auto;
+		}
+		footer{
+			width:60%;
+			margin:0 auto;
+		}
+		/***** ***** ***** 顶部 ***** ***** *****/
+		header{
+			height:30px;
+			background-color:#F7F7F7;
+			line-height:30px;
+		}
+		header a{
+			 float:left;
+		}
+		header a:hover{
+			color:red;
+			text-decoration:underline;
+		}
+		.a1{
+			width:50px
+			height:30px;
+			
+			margin-left:113px;
+		}
+		.a1 i{
+			width:17px;
+			height:11px;
+			float:left;
+			background:url("images/star.jpg")	no-repeat ;
+			margin-top:8px;
+		}
+		header ul{
+			float:right;
+			margin-right:112px;	
+		}
+		
+		header ul li{
+			float:left;
+			margin-left:10px;
+		}
+		.i1{
+			width:1px;
+			height:20px;
+			float:left;
+			border-left:1px solid #DDD;
+			margin-top:5px;
+		}
+		#vip{
+			padding-left:28px;
+			background:url("images/vip.jpg") no-repeat left center;
+		}
+		#bjd{
+			padding-left:28px;
+			background:url("images/dakehu.jpg") no-repeat left center;
+		}
+		#phone{
+		
+			padding-left:18px;
+			background:url("images/phone.jpg") no-repeat left center;	
+		}
+		#phone:hover{
+		
+			padding-left:18px;
+			background:url("images/iconlist_2.png") no-repeat -126px -397px;
+			
+		}
+		#kefu{
+			background-color:red;
+			padding-right:12px;
+			background:url("images/youjiantou.png") no-repeat right center;	
+		}
+		/***** ***** ***** 搜索区域 ***** ***** *****/
+		#search{
+			/*overflow:hidden; */ 
+			height:90px;
+		}
+		#search ul{
+			width:518px;
+			
+			margin:15px 20px 12px 20px;
+			
+		}
+		#sou{
+			border-left:2px solid #E3393C;
+			border-top:2px solid #E3393C;
+			border-bottom:1px solid #E3393C;
+			background-color:#E3393C;
+		}
+		#sou .search_area{
+			 
+			width:400px;
+			height:40px;
+			border:1px solid #E3393C;
+		}
+		#sou .search_submit{
+			color:white;
+			background-color:#E3393C;
+			margin:0;
+			padding:0;
+			width:100px;
+			height:40px;
+			font-size:15px;
+			font-weight:bold;
+		}
+		.logo{
+			margin-top:13.5px;
+		}
+		.my_jd{
+			margin:27.5px 10px 27.5px 50px ;
+			
+		}
+		.shpping {
+			margin:16px 50px  29px 10px;
+		}
+		nav{
+			height:40px;
+			background-color:#E64346;	
+			font-size:15px;
+			line-height:40px;
+			color:white;
+			font-weight:bold;
+		}
+		nav p{
+			width:185px;
+			padding-left:30px;
+			float:left;
+			background:url("images/jtr.jpg") no-repeat 190px center;
+			background-color:#CD2A2B;
+			
+		}
+		nav a{
+			
+			width:85px;
+			color:white;
+			text-align:center;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<!-- 顶部 -->
+	<header>
+		<a href="#" class="a1"><i></i>收藏京东</a>
+		 
+		<ul>
+			<li>您好,欢迎来到京东!</li>
+			<li><a href="#">[登陆]</a></li>
+			<li><a href="#">[免费注册]</a></li>
+			<li class="i1"><i></i></li>
+			<li><a href="#">我的订单</a></li>
+			<li class="i1"><i></i></li>
+			<li ><a href="#" id="vip">会员俱乐部</a></li>
+			<li class="i1"><i></i></li>
+			<li><a href="#" id="bjd">企业频道</a></li>
+			<li class="i1"><i></i></li>
+			<li><a href="#" id="phone">手机京东</a></li>
+			<li class="i1"><i></i></li>
+			<li><a href="#" id="kefu">客户服务</a></li>
+			<li><i></i></li>
+			<li><a href="#">网站导航</a></li>
+		</ul>
+		<!-- 绝对定位
+		<div id="xiala">
+		
+		</div> -->
+	</header>
+	<!-- 搜索区域 -->
+	<div id="search">
+		<a href="#" class="lf logo"><img src="images/logo-201305.png">	 </a>
+		<ul class="lf">
+			<li id="sou">
+				<input class="search_area" type="text" name="search_area"  >
+				<input class="search_submit" type="submit" name="search_submit" value="搜索">
+				
+			</li>
+			<li >	
+				热门搜索&nbsp;:&nbsp;<a href="#">家纺11月大促</a>&nbsp;&nbsp;<a href="#">彩虹电热毯</a>&nbsp;&nbsp;<a href="#">博洋家纺</a>&nbsp;&nbsp;<a href="#">霞珍</a>&nbsp;&nbsp;<a href="#">床垫床褥</a>&nbsp;&nbsp;<a href="#">九州鹿被子</a>&nbsp;&nbsp;<a href="#">南极人家纺</a>
+			</li>
+		</ul>
+		<a href="#" class="lf my_jd"><img src="images/jd.jpg"></a>
+		<a href="#" class="lf shpping"><img src="images/gwc.jpg"></a>
+	
+	</div>
+	<!-- 导航栏 -->
+	<nav>
+		<p>全部商品分类</p>
+		<a class="lf nav_a1" href="#">首页</a>
+		<a class="lf" href="#">服装城</a>
+		<a class="lf" href="#">食品</a>
+		<a class="lf" href="#">团购</a>
+		<a class="lf" href="#">夺宝岛</a>
+		<a class="lf" href="#">闪购</a>
+		<a class="lf" href="#">金融</a>
+	</nav>
+	<!-- 中央展示区 -->
+	<div id="datu">
+		的萨达
+	</div>
+	<!-- 橱窗展示区 -->
+	<div id="chuchuang">
+	十大阿萨德
+	</div>
+	<!-- 楼层导航 -->
+	<div class="floor">
+	是答案是
+	</div>
+	<!-- 品牌 -->
+	<div class="paizi">
+	萨达速度
+	</div>
+	<!-- 晒单区 -->
+	<div id="shaidan">
+	撒大大
+	</div>
+	<!-- 配送 -->
+	<div id="fuwu">
+	萨达
+	</div>
+	<!-- 页脚 -->
+	<footer>
+	萨达
+	</footer>
+</body>
+</html>

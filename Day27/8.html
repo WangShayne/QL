@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function outer(){
+			var n=1;
+			return function(){
+				return n++;
+			}
+			
+		}
+		var icbc=outer();
+		console.log(icbc())
+		console.log(icbc())
+		n=1;
+		console.log(icbc())
+		console.log(icbc())
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

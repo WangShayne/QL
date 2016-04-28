@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>自我介绍</title>
+		<link rel="Stylesheet" href="index.css"/>
+	</head>
+	<body>
+		<div id="parentDiv">
+<div id="lilei" onmouseover="lilei.intrSelf()" onmouseout="dialog.style.display='none'">
+</div>
+<div id="hmm" onmouseover="hmm.intrSelf()" onmouseout="dialog.style.display='none'">
+</div>
+			<div id="dialog">
+			</div>
+		</div>
+		<script>
+			/*var lilei={
+				sname:"lilei",
+				sage:13,
+				intrSelf:intrSelf
+			}*/
+			
+			function Student(sname,sage){
+				this.sname=sname,
+				this.sage=sage
+			}
+			Student.prototype.intrSelf=function(){
+				dialog.innerHTML="I'm "+this.sname+",I'm"+this.sage+"来自"+this.sclass;
+				dialog.style.display="block"
+				}
+			Student.prototype.sclass="初三2班"
+			Student.prototype.sclass="高五2班"
+			var lilei=new Student("lilei",13)
+			var hmm=new Student("Hanmeimei",14)
+			/*var hmm={
+				sname:"Han Meimei",
+				sage:14,
+				intrSelf:intrSelf
+			
+			}
+			console.log(hmm["sname"])
+			console.log(hmm.sname)
+			for(var key in hmm){
+				console.log(key+":"+hmm[key])
+			}*/
+			function checkProp(obj,prop){
+				console.log(prop+":"+(obj.hasOwnProperty(prop)?"自有":(prop in obj)?"共有":"没有"));
+			}
+			checkProp(lilei,"sname");
+			checkProp(lilei,"sclass");
+			checkProp(lilei,"sage");
+			checkProp(lilei,"sort");
+			checkProp(hmm,"sclass");
+
+		</script>
+	</body>
+</html>

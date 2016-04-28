@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	//员工姓名输入
+	var 	input="";
+	//不停接收姓名添加到数组
+	var a1=[];
+	//输入exit为止
+	while (input!="exit")
+	{
+		input=prompt("请输入姓名");
+		if (input=="exit")
+		{
+			break;  
+			
+		}
+		else {
+			a1[a1.length]=input;
+		}
+		
+	}	
+	//控制台输出所有元素	
+	console.log(String(a1));
+	</script>
+
+
+</head>
+
+<body>
+  
+</body>
+</html>

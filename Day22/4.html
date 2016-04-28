@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function getLeverl(score){
+			//如果 score<0 或 score >100 
+				//输出无效成绩
+			//否则,如果score>=90
+				//输出A
+			//否则,如果score>=80
+				//输出B
+			//否则,如果score>=60
+				//输出C
+			//否则
+				//输出D
+			/*alert(
+			score<0 || score>100?"无效成绩"
+			:
+			score>=90?"A"
+			:
+			score>=80?"B"
+			:
+			score>=60?"C"
+			:
+			"D"
+			)  */
+			alert((score<0 || score>100) && "A" )&& 	(score>=90 && "B")&& (score>=80 && "C")  && (score>=60 && "C" && "D")); 
+		}
+		getLeverl(prompt("请输入分数"));
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function calc(sales){
+			var bonus=0;
+			sales>100 && (bonus+=(sales-100)*0.01,sales=100);
+			sales>60 && (bonus+=(sales-60)*0.015,sales=60);
+			sales>40 && (bonus+=(sales-40)*0.03,sales=40);
+			sales>20 && (bonus+=(sales-20)*0.05,sales=20);
+			sales>10 && (bonus+=(sales-10)*0.075,sales=10);
+			bonus+=sales*0.1;
+			alert(bonus)
+		}
+		calc(prompt('sss'))
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

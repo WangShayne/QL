@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+		#day{
+			color:red;
+		}
+		#code{
+			font-size:13px;
+		}
+  </style>
+ </head>
+ <body>
+		<h1 align="center">HTML5    &nbsp;&nbsp;&nbsp;&nbsp;<span id="day">&lt;Day01&gt;</span></h1>
+		<hr/>
+		<h2>1 HTML 文档片段</h2>
+		<h3>1.1问题</h3>
+		<p>创建如图-1所示的HTML页面;</p>
+		<h3>1.2方案</h3>
+		<p>使用HTML标记来完成该页面效果</p>
+		<h3>1.3实现</h3>
+		<p>建立一个文件,并修改名称first.html.然后使用文本编辑器打开该文件,并为该文件添加代码.以创建标准格式的HTML文档</p>
+		<!--pre标签-->
+		<p>
+				然后在body元素中添加代码,以创建居中显示的段落文本,代码如下所示:
+<pre>
+	&lt;p align="center" title="段落"&gt;
+	    居中显示的段落
+	&lt;/p&gt;
+</pre>
+		</p>
+		<br/>
+		<p>
+				建立一个文件,并修改名称first.html.然后使用文本编辑器打开该文件,并为该文件添加代码.以创建标准格式的HTML文档<br/>
+				然后在body元素中添加代码,以创建居中显示的段落文本,代码如下所示:<br/>
+				<span id="code">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p align="center" title="段落"&gt;<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;居中显示的段落<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;<br/>
+				</span>
+		</p>
+ </body>
+</html>

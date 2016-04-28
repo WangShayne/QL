@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		//飞机大战
+		function Flyer(fname,fspeed){
+			this.fname=fname;
+			this.fspeed=fspeed;
+		}
+		Flyer.prototype.fly=function(){
+			console.log(this.fname+"以"+this.fspeed+"速度飞行");
+		}
+		//定义第一种飞行物:Bee
+		function Bee(fname,fspeed,award){ //this-->正在创建的对象
+			//Step1:调用父类型构造函数 --> 借用构造函数
+			Flyer.apply(this,arguments)
+						//第二个参数后,都是i要传给Flyer的参数
+			//独特的属性:award:1life  1bullet
+			this.award=award//extends
+		}
+		Bee.prototype.get=function(){
+			console.log("获得奖励"+this.award)
+		}
+			//step2:让子类型的原型对象,继承父类型的原型对象
+		Object.setPrototypeOf(Bee.prototype,Flyer.prototype);
+		var bee=new Bee("小蜜蜂",30,"1 life")
+		//bee.__proto__ -> Bee.prototype
+		bee.fly();
+		bee.get();
+		console.log(bee.award)
+
+
+			//定义第二种飞行物:Plane
+		function Plane(fname,fspeed,award){
+			Flyer.apply(this,arguments)
+			//独特的属性:score 10 20 30
+			this.award=award;
+		}
+		Plane.prototype.get1=function(){
+			console.log("获得奖励"+this.award)
+		}
+		Object.setPrototypeOf(Plane.prototype,Flyer.prototype);
+		var p=new Plane("敌机",500,30)
+		p.fly();
+		p.get1();
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

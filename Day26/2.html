@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<a calss="curr" href="http://www.tmooc.cn">go to tmooc</a>
+	<a name="top"></a>
+	<h1>HelloWorld</h1>
+	<a name="bottom"></a>
+	<div>
+	<a href="http://tedu.cn" target="blank">go to tedu</a>
+	</div>
+	<script>
+		var html=document.body.innerHTML;
+		var reg=/<(a)[^>]*?href=(['"])([^'"]*?)\2[^>]*?>.*?<\/\1>/g;
+		
+		var arr=null;
+		while((arr=reg.exec(html))!=null){
+			console.log(arr[3])
+			//输出本次找到的url
+		}
+			
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		var bus=[];
+		/*for(var i=1;i<=5;i++){
+			console.log("乘客"+i+"上车")
+			bus.push("乘客"+i);
+			console.log(String(bus));
+		
+		}
+		while(bus.length>0){
+			var c=bus.pop();
+			console.log(c+"下车");
+			console.log(String(bus));
+		}*/
+
+		/*for(var i=1;i<=5;i++){
+			console.log("乘客"+i+"上车")
+			bus.unshift("乘客"+i);
+			console.log(String(bus));
+		
+		}
+		while(bus.length>0){
+			var c=bus.shift();
+			console.log(c+"下车");
+			console.log(String(bus));
+		}*/
+
+		var shen6s=5;
+		var queue=[];
+		for(var i=1;i<=5;i++){
+			queue.push("顾客"+i)
+		}
+		queue.push("你");
+		console.log(String(queue));
+		while(shen6s>0){
+			var c=queue.shift();
+			console.log(c+"抢购成功")
+			shen6s--;
+			console.log("剩余"+shen6s+"部");
+			console.log(String(queue))
+		}
+		console.log(String(queue)+"没抢上");
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

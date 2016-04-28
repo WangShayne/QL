@@ -1,0 +1,32 @@
+#girdPanel{
+	width:480px;
+	height:480px;
+	margin:0 auto;
+	background-color:#bbada0;
+}
+.grid,.cell{
+	width:100px;
+	height:100px;
+	border-radius:6px;
+}
+.grid{
+	background-color:#ccc0b3;
+	float:left;
+	margin:16px 0 0 16px;
+}
+.cell{
+	position:absolute;
+	font-size:60px;
+	text-align:center;
+	line-height:100px;
+	color:#fff;
+}
+[id^c0]{top:16px}
+[id^c1]{top:132px}
+[id^c2]{top:248px}
+[id^c3]{top:364px}
+
+[id$="0"]{top:16px}
+[id$="1"]{top:132px}
+[id$="2"]{top:248px}
+[id$="3"]{top:364px}

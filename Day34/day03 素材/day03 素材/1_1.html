@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+<script>
+	var json='[{"ename":"Tom", "salary":3500, "age":25},{"ename":"John", "salary":3800, "age":28},{"ename":"Mary", "salary":3600, "age":25}]';
+	function initEmps(){
+		var emps=eval(json);//将json字符串转换为内存中的对象
+		//创建一个空的table元素,保存在变量table中
+		var table=document.createElement("table");
+		//创建一个thead元素,保存在变量thead中
+		var thead=document.createElement("thead");
+		//将thead追加到table下
+		table.appendChild(thead);
+		//创建一个tr,保存在变量tr中
+		var tr=document.createElement("tr");
+		//将tr追加到thead下	
+		thead.appendChild(tr);
+		//创建遍历emps中第一个对象的每个属性,在变量过程中
+		for(var key in emps[0]){
+			//创建一个th,保存在变量th中
+			var th=document.createElement("th");
+			//设置th的内容为当前属性名
+			th.innerHTML=key
+			//马上将th追加到tr下
+			tr.appendChild(th);
+		}
+		//创建tbody元素
+		var tbody=document.createElement("tbody")
+		//将tbody元素追加到table中
+		table.appendChild(tbody)
+		//遍历emps中每个对象
+		for(var i=0;i<emps.length;i++){
+			//创建tr
+			var tr=document.createElement("tr")
+			//将tr保存到tbody中
+			tbody.appendChild(tr)
+			//遍历emps中当前对象的每个属性
+			for(var key in emps[i]){
+				//创建td
+				var td=document.createElement("td")
+				//设置td的内容为当前对象的当前对象属性值
+				td.innerHTML=emps[i][key]
+				//将td追加到tr中
+				tr.appendChild(td)
+			}
+		}
+		//将table追加到id为data的元素下
+		data.appendChild(table)
+	}
+	window.onload=function(){
+		initEmps();
+	}
+</script>
+</head>
+<body>
+	<div id="data">
+		
+	</div>
+</body>
+</html>

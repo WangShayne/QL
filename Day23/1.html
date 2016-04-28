@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function getDays(y,m,d)
+		{
+			d=parseInt(d)
+			//var arr=[0,31,59,90,120,151,181,212,243,273,304,334];
+
+		//声明数组arr,初始化第一个元素为0
+			
+		//i从1开始,到<=11结束,向数组i位置添加新元素
+			for (var i=1,sum=0;i<m;i++)	{
+			//arr中i位置的元素等于:arr中i-1位置的值+?
+					sum+=(i==2?28:i==4||i==6||i==9||i==11?30:31);	//如果i是2,就+28
+					//否则,如果i是4或6或9或11就+30
+						//否则,+31
+			}		
+			return sum+d+(m>2 && (y%4==0 && y%100!=0 || y%400==0)?1:0);
+					//如果2月以上,且是闰年就+1,否则不加
+			alert()
+		}
+		alert(getDays(prompt("1"),prompt("1"),prompt("1")))
+		
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

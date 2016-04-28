@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	var str="白日白日白日一身劲,黄河白日一万五.到处白日是白日,你说白日是个啥"
+	var reg=/白日/g;
+	var i=str.match(reg);
+	var arr=null;
+	while(arr=reg.exec(str)!=null){
+		console.log("在位置"+arr.length+"发现关键字"+arr[3]+"下次从"+str.lastIndex+"查起")
+	}	
+	console.log(i)
+	console.log(arr)
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

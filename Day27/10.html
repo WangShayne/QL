@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function fun(){
+			for(var i=0,arr=[];i<3;i++){
+				arr[i]=function(){return i}
+			}//i=3
+			return arr;
+		}
+		var funs=fun();
+		console.log(funs[0]())
+		console.log(funs[1]())
+		console.log(funs[2]())
+		
+		function f(){
+			var n=999;
+			nAdd=function(){n++};
+			return function(){return n}
+		
+		}
+		var get=f();
+		console.log(get());
+		nAdd();
+		console.log(get());
+		nAdd();
+		console.log(get());
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

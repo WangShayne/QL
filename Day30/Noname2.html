@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+	'use strict'
+		var emp={eid:1001,ename:"smith"};
+		//禁止扩展
+		//Object.preventEvtensions(emp)
+		//密封
+		Object.seal(emp)
+		//emp.salary=12000;
+		//delete emp.ename
+		console.log(Object.getOwnPropertyDescriptor(emp,"eid"))
+	</script>
+</head>
+
+<body>
+  
+</body>
+</html>

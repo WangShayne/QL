@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script>
+		function start(btn){ //定义函数start绑定到按钮
+			var input1="";	
+			var input2="";  
+			var input3="";  
+			input1=prompt("__?");  //第一个问题
+			input2=prompt("还是__");//第二个问题
+			input3=prompt("这是一个__?"); //第三个问题	
+			if (input1=="摇")
+			{
+				input1=1;
+			}
+			else{
+				input1=0;
+			}
+			if (input2=="不摇")
+			{
+				input2=1;
+			}
+			else{
+				input2=0;
+			}
+			if (input3=="问题")
+			{
+				input3=1;
+			}
+			else{
+				input3=0;
+			}
+			console.log(String(input1+input2+input3));
+		}	
+
+	</script>
+</head>
+
+<body>
+  	       <input type="button" name="start" id="start" value="开始考试" onclick="start(this)">
+</body>
+</html>

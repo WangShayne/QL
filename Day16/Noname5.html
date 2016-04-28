@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		@keyframes starJumps{
+			0%{
+				transform:translate(0,0);
+			}
+			10%{
+				transform:rotate(360deg);
+				transform:translate(100px,100px) ;
+			}
+			20%{
+				transform:rotate(720deg);
+				transform:translate(200px,200px);
+			}
+			30%{
+				transform:rotate(720deg);
+				transform:translate(300px,100px) ;
+			}
+			40%{
+				transform:rotate(720deg);
+				transform:translate(400px,200px) ;
+			}
+			50%{
+				transform:rotate(720deg);
+				transform:translate(500px,100px) ;
+			}
+			60%{
+				transform:rotate(720deg);
+				transform:translate(600px,200px) ;
+			}
+			70%{
+				transform:rotate(720deg);
+				transform:translate(700px,100px) ;
+			}
+			80%{	
+				transform:rotate(720deg);
+				transform:translate(800px,200px) ;
+			}
+			90%{
+				transform:rotate(720deg);
+				transform:translate(900px,100px) ;
+			}
+			100%{
+				transform:rotate(720deg);
+				transform:translate(1000px,0)
+			}
+		}
+		div{
+			width:50px;
+			height:50px;
+			background-color:red;
+			text-align:center;
+		}
+	
+		@-webkit-keyframes starJumps{
+			0%{
+				transform:translate(0,0);
+				background-color:#66ff66;
+			}
+			10%{
+				transform:translate(100px,100px) rotate(720deg) skew(120deg);
+				background-color:#33ffcc;
+			}
+			20%{
+				transform:translate(200px,200px) rotate(0deg) skew(120deg);
+				background-color:#66ffcc;
+			}
+			30%{
+				transform:translate(300px,100px) rotate(720deg) scale(2) skew(180deg);
+				background-color:#cc0033;
+			}
+			40%{
+
+				transform:translate(400px,200px)  rotate(0deg) skew(30deg);
+				background-color:#336633;
+			}
+			50%{
+				transform:translate(500px,100px)  rotate(720deg) skew(10deg);
+				background-color:#cc6600;
+			}
+			60%{
+				transform:translate(600px,200px)  rotate(0deg) skew(60deg);
+				background-color:#ff3300;
+			}
+			70%{
+				transform:translate(700px,100px)  rotate(720deg);
+				background-color:#cc6699;
+			}
+			80%{	
+				transform:translate(800px,200px)  rotate(0deg) ;
+				background-color:#cccc00;
+			}
+			90%{
+				transform:translate(900px,100px)  rotate(720deg)  scale(2);
+				background-color:#000000;
+			}
+			100%{
+				transform:translate(1000px,0) rotate(0deg) skew(45deg) scale(2);
+				background-color:#ff3300;
+			}
+		}
+		#star{
+			animation:starJumps	   3s linear;
+			-webkit-animation:starJumps 2s linear;
+			-webkit-animation-iteration-count:infinite;
+			-webkit-animation-direction:alternate;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="star">
+  	<img src="star.jpg" >
+	</div>
+</body>
+</html>
