@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#d1{
+			width:1000px;
+			height:1000px;
+			border:1px solid #ddd;
+		}
+		.sDiv{
+			width:50px;
+			height:50px;
+			border:1px solid #ddd;
+			float:left;
+		}
+		.closed{
+			float:right;
+			cursor:pointer;
+		}
+		.hide{
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>append</h1>
+	<button>添加方块</button>
+	<div id="d1"></div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		function rc(){
+			var r=Math.floor(Math.random()*255);
+			var g=Math.floor(Math.random()*255);
+			var b=Math.floor(Math.random()*255);
+			return 'rgb('+r+','+g+','+b+')'
+		}
+		$('button').click(function(){
+			var $sDiv=$('<div class="sDiv"><span class="closed" data-trigger="closed">&times;</span><div>')
+			console.log(rc())
+			$sDiv.css("background",rc())
+			/* 直接在添加的div中找到span 如果从外面,找不到,因为页面已经加载完成*/
+				$sDiv.find(".closed").click(function(){
+					$(this).parent().remove();
+				})
+
+			$('#d1').append($sDiv)
+		})
+		
+
+	</script>
+</body>
+</html>

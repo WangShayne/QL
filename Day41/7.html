@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<button>显出不可见的元素的数量</button>	
+	<div style="display:none">Display:none</div>
+	<p style="visibility:hidden">visibility:hidden</p>
+	<span style="opticy:0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis amet tenetur autem recusandae nemo modi ullam deleniti unde saepe odio at enim doloribus aspernatur. Ut sunt magnam aliquam blanditiis distinctio!</span>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$("button").click(function(){
+			alert($(":hidden").length)
+			console.log($(":hidden"))
+			
+		})
+		</script>
+</body>
+</html>

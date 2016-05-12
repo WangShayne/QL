@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		body{
+			background:black;
+		}
+		.alert{
+			border:1px solid black;
+			color:white;
+			background:black;
+			padding:10px;
+		}
+		.close{
+			float:right;
+			font-weight:bold;
+			opacity:.3;
+			cursor:pointer;
+			color:white;
+		}
+		.fbi{
+			display:block;
+			background-color:red;
+			color:white;
+			font-size:40px;
+			width:220px;
+			height:80px;
+			margin:0 auto;
+			line-height:80px;
+		}
+		.fade{
+			opacity:1;
+			transition:opacity 2s linear;
+		}
+		.fade.out{
+			opacity:0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>操作元素的样式-控制class</h1>
+	<button id="showOrHide">显示/隐藏警告框</button>
+
+	<div  class="alert fade"><span class="close" data-trigger="close">&times;</span><span class="fbi">FBI Warning</span><br><p>&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae recusandae rem cum cupiditate at vel perferendis delectus tempora rerum qui labore magnam sit eius optio nostrum voluptatibus dolorem eum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos tempora doloribus enim dolor ipsam perspiciatis fuga officiis at voluptatem sunt velit dolorem quasi ex nesciunt assumenda consectetur libero fugit blanditiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>&nbsp;Quas soluta quaerat harum pariatur corrupti nam at. Impedit quaerat eius ipsum atque ad eum autem suscipit accusantium voluptatum tempore facere voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nihil at omnis accusamus ut optio veniam quasi itaque incidunt perspiciatis aspernatur laborum rem sunt nam odit voluptatem officiis explicabo. Eveniet.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi magni adipisci doloremque cum ad expedita inventore molestiae suscipit! Facilis reprehenderit sit eligendi temporibus ea voluptatem nemo aut a voluptate iste.<br>&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aliquam eius veritatis cum quod a nemo nesciunt nisi unde quidem quis ut natus pariatur quasi totam voluptatum iusto voluptatibus officiis!&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae recusandae rem cum cupiditate at vel perferendis delectus tempora rerum qui labore magnam sit eius optio nostrum voluptatibus dolorem eum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos tempora doloribus enim dolor ipsam perspiciatis fuga officiis at voluptatem sunt velit dolorem quasi ex nesciunt assumenda consectetur libero fugit blanditiis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>&nbsp;Quas soluta quaerat harum pariatur corrupti nam at. Impedit quaerat eius ipsum atque ad eum autem suscipit accusantium voluptatum tempore facere voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nihil at omnis accusamus ut optio veniam quasi itaque incidunt perspiciatis aspernatur laborum rem sunt nam odit voluptatem officiis explicabo. Eveniet.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi magni adipisci doloremque cum ad expedita inventore molestiae suscipit! Facilis reprehenderit sit eligendi temporibus ea voluptatem nemo aut a voluptate iste.<br>&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aliquam eius veritatis cum quod a nemo nesciunt nisi unde quidem quis ut natus pariatur quasi totam voluptatum iusto voluptatibus officiis!</p></div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('#showOrHide').click(function(){
+			var $div=$(this).next()
+//			debugger;
+//			if($div.hasClass("out")){
+//				$div.removeClass("out")
+//			}
+//			else{
+//				$div.addClass("out")
+//			}
+			$div.toggleClass("out")
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+    <h1>表单元素状态过滤选择器</h1>
+		<h3>我要下单</h3>
+		<form action="">
+			请选择您需要的菜品:
+			<br>
+			<select name="" id="" multiple>
+				<option value="">京酱肉丝</option>
+				<option value="">预想肉丝</option>
+				<option value="">青椒肉丝</option>
+				<option value="">哈哈哈哈</option>
+			</select>
+			<br>
+			<input type="button" value="我要下单">
+			<input type="button" value="添加到购物车">
+		</form>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+			$('[value="我要下单"]').click(function(){
+				if($(':selected').length==0){
+					alert("必须给老子选一个!")
+				}
+				else if($(':selected').length>1){
+					alert("吃那么多要死啊")
+				}
+				else{
+					alert($(':selected').html())
+				}
+			})
+		</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+		<h1>注册用户</h1>
+		<form action="register.php" method="post">
+															<!-- Encode type 用于指定个表单的编码类型,可取值:
+																	1 application/x-www-form-urlencoded:默认值,表单数据编码后再提交
+																		k=v&k=v&k=v
+																	2 text/plain: 表单数据不经过编码,直接提交  服务器拒绝接收
+																			--HTTP协议规定:请求消息只能包含ASCII字符
+																	3 multipart/form-data: 专用于提交包含文件上传的表单数据
+															-->
+			用户名: <input type="text" name="uname" id="uname"><span id="tips"></span><br>
+			密码:		<input type="password" name="upwd"><br>
+			邮箱:		<input type="email" name="umail"><br>
+			生日:		<input type="text" name="ubirthday"><br><br>
+			<input type="submit">&nbsp; <input type="reset">
+
+		</form>
+		<script>
+			uname.onblur=function(){
+				var xhr=new XMLHttpRequest;
+				xhr.onreadystatechange=function(){
+					console.log(xhr.readyState)
+					if(xhr.readyState===4){
+						console.log(xhr.responseText)
+						if(xhr.responseText=="exists"){
+							tips.innerHTML="用户名已被占用";
+							tips.style.color='red';
+						}else{
+							tips.innerHTML="用户名可用";
+							tips.style.color='green';
+						}
+					}
+				}
+				xhr.open('GET','3.php?uname='+uname.value,true);
+				xhr.send(null);
+			}
+		</script>
+</body>
+</html>

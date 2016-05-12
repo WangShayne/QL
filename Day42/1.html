@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+		<h1>表单元素状态过滤选择器</h1>
+		<h3>注册新用户</h3>
+		<form action="">
+			用户名: <input type="" disabled><br><br>
+			密码:	 &nbsp;<input type="password" disabled><br><br>
+			<input type="checkbox">我同意本站的使用条款<br><br>
+			<input type="button" value="提交注册信息" disabled><br><br>
+		</form>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+			$(':checkbox').click(function(){
+				$(':disabled').attr('disabled',false)
+			})
+		</script>
+</body>
+</html>

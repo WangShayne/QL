@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+
+	<title>Document</title>
+</head>
+
+<body>
+<!-- 	<div id="my-alert"title="温馨提示"> 
+		<p><b>您的浏览器版本太低了</b></p> 
+		<p><a href="#">点击</a>下载最新版本的浏览器</p>
+ 	</div> -->
+	<h3>弹出式对话框</h3>
+	<a href="#">我要登录</a>
+	<div id="dialog-login" title="用户登录">
+		<form action="">
+			用户名:<br> <input type="text"><br>
+			密码: <br><input type="password"><br>
+					
+		</form>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+//		$('#my-alert').dialog();
+		$('#dialog-login').dialog({
+			
+			autoOpen:false,
+			buttons:[{
+				text:"提交",
+				click:function(){
+					$(this).html('提交中请稍后....')
+				}
+			},{
+				text:"取消",
+				click:function(){
+					$(this).dialog('close')
+				}
+			}]
+		
+		});
+		$('a:contains("登录")').button().click(function(){
+				$('#dialog-login').dialog("open");
+		})
+
+	</script>
+</body>
+</html>

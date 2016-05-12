@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#d1{
+			border:2px solid #aaa;
+			width:200px;
+			height:200px;
+			transition:all 1s linear;
+		}
+		#d1.bor{
+			border:50px solid #e4393c;
+			box-shadow: 10px 10px 5px #888888;
+
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="d1">res in minus ipsam adipisci cumque officia!</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+
+		$('#d1').hover(
+			function(){
+				$(this).addClass('bor')
+			},
+			function(){
+				$(this).removeClass('bor')
+			}	
+		)
+	</script>
+</body>
+</html>

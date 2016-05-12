@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+		<style>
+			input{
+				padding:10px;
+				margin:10px;
+				outline:none;
+				border-radius:5px;
+				box-shadow:0 0 6px transparent;
+			}
+		</style>
+</head>
+
+<body>
+	<input type="text" placeholder="请输入您的用户名"><br>
+	<input type="password" placeholder="请输入您的密码">
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>		
+	<script>
+		$(':text , :password').focus(function(){
+			$(this).animate({
+				height:"30px",
+				borderColor:"#aaf",
+			},3000)
+		})
+		$(':text , :password').blur(function(){
+			$(this).animate({
+				height:"10px",
+				borderColor:"",
+			},3000)
+		})
+	</script>		
+</body>
+</html>

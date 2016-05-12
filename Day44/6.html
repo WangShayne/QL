@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+		<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+</head>
+
+<body>
+	<h1>jQueryUI:Widgets --Datapicker</h1>
+	您的生日: <input type="date" name='birthday'>	
+	您的入学日期: <input type="text" name="schooldate">
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+
+		$('[name="schooldate"]').datepicker({ dateFormat: 'yy-mm-dd' });
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+	<title>Document</title>
+	<style>
+		.box{
+			border:1px solid #aaa;
+			background:#eee;
+			color:#333;
+			padding:10px;
+			border-radius:4px;
+			width:200px;
+		}
+	
+	</style>
+</head>
+
+<body>
+	<h1>jQueryUI-Effects</h1>
+	<h3>颜色动画</h3>
+	<button>显示/隐藏box</button>
+	<div class="box" data-toggle="width">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo rem omnis possimus officia harum non. Voluptatem minus nobis dolorum ipsum unde dolore adipisci iste delectus ipsam dolorem voluptates incidunt debitis.</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>		
+	<script>
+		$('button').click(function(){
+			$('[data-toggle="width"]').toggle('puff',2000)
+		})
+		$('[data-toggle="width"]').draggable()
+		$('[data-toggle="width"]').resizable()
+//		$('[data-toggle="width"]').click(function(){
+//			$(this).animate({
+//				backgroundColor:"#e4393c",
+//				width:"500px",
+//				color:"#fff",
+//				borderColor:"#0ff",
+//				opacity:"0.2"
+//			},3000)
+//		})
+//	
+	</script>
+</body>
+</html>

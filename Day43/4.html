@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>使用代码触发事件</h1>
+	<button id="bt1">BTN1</button>
+	<button id="bt2">BTN2</button>
+	<button id="bt3">BTN3</button>
+	<hr>
+	<a href="#">模拟点击所有的按钮</a>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('#bt1').click(function(){
+			alert("按钮1被单击")
+		});
+		$('#bt2').click(function(){
+			console.log("按钮2被单击")
+		});
+		$('#bt3').click(function(){
+			console.log("按钮3被单击")
+		});
+		$('a').click(function(event){
+			event.preventDefault();
+			$('button').click()
+		})
+
+	</script>
+</body>
+</html>

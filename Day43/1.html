@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#d1{
+			width:800px;
+			height:600px;
+			border:1px solid #ddd;
+		}
+		#d2{
+			width:200px;
+			height:500px;
+			border:1px solid #ddd;
+			float:left;
+		}
+		#d1 a{
+			display:block;
+			width:100%;
+			text-decoration:none;
+		}
+		ul{
+			list-style:none;
+		}
+		.hover{
+			color:red;	
+		}
+		.box{
+			width:400px;
+			height:500px;
+			border:1px solid #ddd;
+			float:left;
+			display:none;
+		}
+		.box.show{
+			display:block;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="d1">
+		<div id="d2">
+		<ul>
+			<li><a href="" class="ul-a" data-toggle="item">我的订单</a></li>
+			<li><a href="" class="ul-a" data-toggle="item">用户设置</a></li>
+			<li><a href="" class="ul-a" data-toggle="item">账号安全</a></li>
+		</ul>
+		</div>
+		<div>
+			<div class="box">我的订单详细内容</div>
+			<div class="box">用户设置详细内容</div>
+			<div class="box">账号安全详细内容</div>
+			
+		</div>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>	
+	<script>
+		$('[data-toggle="item"]').click(function(event){
+			event.preventDefault();
+			$(this).parent().siblings('.hover').removeClass('hover')
+			$(this).parent().addClass('hover')
+//			$("#d2").next().addClass("show")
+		})
+	</script>
+</body>
+</html>

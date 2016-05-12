@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.container{
+			width:1000px;
+			margin:0 auto;
+			border:1px solid #aaa;
+		}
+		.grid{
+			width:200px;
+			float:left;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>jQuery第三方插件--Masonry</h1>
+	<h3>彩砖墙/瀑布流--页面布局插件</h3>
+	<div class="container">
+		<div class="grid">1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis veniam quisquam quasi distinctio nam mollitia deleniti ex consequatur recusandae quo dignissimos inventore accusantium. Animi debitis molestias deserunt itaque odio.</div>
+		<div class="grid">2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.	</div>
+		<div class="grid">3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">8 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">9 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">11 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">12 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">13 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">14 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">15 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">16 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+		<div class="grid">17 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi minus quas nemo tempore quam id vel sint cupiditate praesentium vero eveniet ipsum quo excepturi. Iure accusamus incidunt unde earum voluptatum.</div>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src=""></script>
+	<script>
+		function rc(){
+			var r=Math.floor(Math.random()*256);
+			var g=Math.floor(Math.random()*256);
+			var b=Math.floor(Math.random()*256);
+			return 'rgb('+r+','+g+','+b+')'
+		}
+		$('.grid').each(function(i){
+			$(this).css("background",rc())
+		})
+	</script>
+</body>
+</html>

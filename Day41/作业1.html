@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.selected{
+			background:#FFFF00;	
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<caption>员工信息</caption>
+		<thead>
+			<tr>
+				<th></th>
+				<th>姓名</th>
+				<th>薪水</th>
+				<th>年龄</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" ></td>
+				<td>张三</td>
+				<td>20000	</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" ></td>
+				<td>李四</td>
+				<td>23000</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" ></td>
+				<td>王五</td>
+				<td>14000</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" ></td>
+				<td>马六</td>
+				<td>15000</td>
+				<td>21</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$("table").css("margin","0 auto")
+						.css("width","500px")
+						.css("border-collapse","collapse")
+		$("table th:first,table td:first").css("width","50px")
+		$("thead tr").css("background","#ccc")
+		$("thead th,tbody td").css("border","1px solid #ddd")
+		$("tbody tr:odd").css("background","#FFE7BA")
+		$(function(){
+			$("tbody :checkbox:checked").parent().parent().addClass("selected");
+			$("tbody tr").click(function(){
+				if($(this).hasClass("selected")){
+					$(this).removeClass("selected");
+					$(this).find(":checkbox").attr("checked",false)
+				}
+				else{
+					$(this).addClass("selected");
+					$(this).find(":checkbox").attr("checked",true)
+				}
+			})
+		})
+		
+		
+
+
+	</script>
+</body>
+</html>

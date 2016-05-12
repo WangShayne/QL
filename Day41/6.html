@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>按钮组</h1>
+	<br><br>
+	<ul id="u1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<br><br><br><br>
+	<h1>变色的表格</h1>
+	<br><br>
+	<table id="tab1">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>name</th>
+				<th>haoma</th>
+				<th>xingbei</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>0001</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>小红</td>
+				<td>0002</td>
+				<td>女</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>大哥</td>
+				<td>0003</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>大萨达</td>
+				<td>0004</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>把蒜老妹</td>
+				<td>0005</td>
+				<td>女</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>小弟</td>
+				<td>0006</td>
+				<td>男</td>
+			</tr>
+		</tbody>
+	</table>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+//按钮组
+	$("#u1 li").css("text-align","center")
+					.css("line-height","50px;")
+					.css("display","block")
+					.css("width","50px")
+					.css("height","50px")
+					.css("border","1px solid #ddd")
+					.css("float","left")
+	$("#u1 li:gt(0)").css("border-left","0px")
+	$("#u1 li:first").css("border-radius","5px 0px 0px 5px");
+	$("#u1 li:last").css("border-radius","0px 5px 5px 0px")
+//变色的表格
+	$("#tab1").css("border-collapse","collapse")
+					.css("border-spacing","0")
+					.css("width","100%")
+					.css("height","200px")
+					.css("text-align","center");
+	$("#tab1 th,#tab1 td").css("padding","6px 10px");
+	$("#tab1 tr th").css("border-bottom","2px solid #aaa");
+//							.css("background","#3366ff")
+	$("#tab1 tr:not(:last) td").css("border-bottom","1px solid #aaa");
+	$("#tab1 tbody>tr:even").css("background","#eee");
+  </script>
+</body>
+</html>

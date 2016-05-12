@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#d1{
+			width:200px;
+		}
+		button{
+			width:38px;
+			height:38px;
+		}
+		#d1 div{
+			width:195px;
+			height:30px;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<div id='d1'>
+		<div type="" id="put1"></div>
+		<div type="" id="put2"></div>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<button>5</button>
+		<button>6</button>
+		<button>7</button>
+		<button>8</button>
+		<button>9</button>
+		<button>0</button>
+		<button>+</button>
+		<button>-</button>
+		<button>*</button>
+		<button>/</button>
+		<button>=</button>
+		<button>c</button>
+
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>	
+	<script>
+		
+		$('button').click(function(){
+			var $put=$(this).html();
+			if($put==0||$put==1||$put==2||$put==3||$put==4||$put==5||$put==6||$put==7||$put==8||$put==9){
+				$('#put2').append($put);
+				
+
+			}
+			else if($put=="+"||$put=="-"||$put=="*"||$put=="/"){
+				var sum=$('#put2').html();
+				$('#put1').append(sum+$put);
+				$('#put2').html('')
+			}
+			else if($put=="="){
+				var c=$('#put1').html()+$('#put2').html()
+				$('#put1').html('')
+				$('#put2').html('')
+				$('#put2').append(eval(c))
+			}
+			else{
+				$('#put1').html('')
+				$('#put2').html('')
+			}
+		})
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>自定义jQuery插件函数</h1>
+	<h3>形式1:jQuery全局函数</h3>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src='js/3.js'> </script>
+ 	<script>
+		var scorelist=[50,60,70,90];
+		var s=jQuery.terena.sum(scorelist);
+		console.log("全班总分为:"+s)
+		console.log("全班平均分为:"+jQuery.terena.avg(scorelist))
+	</script>	
+</body>
+</html>

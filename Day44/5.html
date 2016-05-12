@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>jQueryUI:Widgets -- Accordion</h1>
+	菜品搜索: <input type="text" name='search'>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+		var dishList=['鱼香肉丝','西红柿鸡蛋','青椒肉丝','麻辣鸡丁','酸菜鱼','红烧鲫鱼','是是是肉丝'];
+		$('[name="search"]').autocomplete({
+			source:dishList
+		});
+	</script>
+</body>
+</html>

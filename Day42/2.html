@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+  <h1>表单元素状态过滤选择器</h1>
+		<h3>开通我的微博</h3>
+		<form action="">
+			请选择您关注的话题:
+			<br>
+			<input type="checkbox">体育<br> 	
+			<input type="checkbox">音乐<br> 	
+			<input type="checkbox">八卦<br> 	
+			<input type="checkbox">搞笑<br> 	
+			<input type="checkbox">科技<br> 	
+			<input type="checkbox">电影<br> 	
+			<input type="button" value="进入我的微博"><br><br>
+		</form>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+//		至少选择一个
+		$(':button').click(function(){
+			if($(':checked').length==0){
+				alert("必须选择一个")
+			}
+			else{
+				alert("选择了"+$(':checked').length+"个关注"+",欢迎进入weibo")
+			}
+		})
+		</script>
+</body>
+</html>

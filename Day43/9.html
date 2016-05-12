@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.accordion .title{
+			background:#eee;
+			border:1px solid #aaa;
+			padding:6px;
+			font-size:1.5em;
+			font-weight:bold;
+			cursor:pointer;
+		}
+		.accordion .content{
+			border:1px solid #aaa;
+			padding:6px;
+		}
+	</style>
+</head>
+	
+<body>
+	<h1>使用"高度动画"实现"手风琴"组件</h1>
+	<div class="accordion">
+		<div class="title" data-toggle="content">《西游记简介》</div>
+		<div class="content"><p>西游记简介:讲述了一个和尚和四个动物的故事</p></div>
+	</div>
+	<div class="accordion">
+		<div class="title" data-toggle="content">《水浒传》</div>
+		<div class="content" style="display:none"><p>一百零五个男人和3个女人的故事</p></div>
+	</div>
+	<div class="accordion">
+		<div class="title" data-toggle="content">《红楼梦》</div>
+		<div class="content" style="display:none"><p>一个男人和N多个女人的故事</p></div>
+	</div>
+	<div class="accordion">
+		<div class="title" data-toggle="content">《三国演义》</div>
+		<div class="content" style="display:none"><p>诸葛亮骂街的故事</p></div>
+	</div>
+
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('[data-toggle="content"]').click(function(){
+			$(this).next().fadeToggle();
+
+		})
+	</script>
+</body>
+</html>

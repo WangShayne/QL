@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<select size="6" multiple id="s1">
+		<option value="dpj">大盘鸡</option>
+		<option value="ksj">口水鸡</option>
+		<option value="jmj">椒麻鸡</option>
+		<option value="hdq">红灯区</option>
+	</select	>
+	<button > &gt;</button>
+	<select size="6" multiple id="s2">
+		
+	</select>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('button').click(function(){
+		
+//		var $add=$('#s1 option:selected');
+//			$('#s2').append($add);
+/*clone*/
+		$('#s1 :selected').clone(true).appendTo("#s2")
+		})
+		$('option').dblclick(function(){
+			console.log($(this).html()+"-"+$(this).val())
+		})
+	</script>
+</body>
+</html>

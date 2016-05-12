@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+	#d1{
+			border:2px solid #aaa;
+			width:200px;
+			height:200px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>jQuery动画函数-显示隐藏动画</h1>
+	<button id="bt1">隐藏</button>
+	<button id="bt2">显示</button>	
+	<button id="bt3">隐藏显示切换</button>	
+	<div id="d1">res in minus ipsam adipisci cumque officia!</div>
+	
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('#bt1').click(function(){
+			$('#d1').slideUp(1000)
+		})
+		$('#bt2').click(function(){
+			$('#d1').slideDown(1000)
+		})
+		$('#bt3').click(function(){
+			
+			$('#d1').slideToggle()
+//function(){$('#d1').show()},function(){$('#d1').hide()}
+		})
+	</script>
+</body>
+</html>

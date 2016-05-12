@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<ul id="u1">
+		<li><a data-toggle="tab" href="#">十元套餐</a></li>
+		<li><a data-toggle="tab" href="#">二十元套餐</a></li>
+		<li><a data-toggle="tab" href="#">三十元套餐</a></li>
+	</ul>
+
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$("#u1").css("list-style","none");
+		$("#u1 li").css("float","left")			
+		$("[data-toggle='tab']").css("float","left")		
+										.css("width","100px")
+										.css("text-decoration","none")
+										.css("padding","6px 12px")
+										.css("border-bottom","1px solid #aaa");
+		$("[data-toggle='tab']:first").css("border","1px solid #aaa")
+														.css("border-bottom","none")
+$("[data-toggle='tab']").click(function(){
+	//			清除所有a的边框
+				$("[data-toggle='tab']").css("border","none")
+														.css("border-bottom","1px solid #ddd")
+	//			在设置当前被点击的a的边框
+			$(this).css("border","1px solid #aaa")
+					  .css("border-bottom","none")
+					 
+	})
+	</script>
+</body>
+</html>

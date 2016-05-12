@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>使用xhr对象向服务器发送异步请求</h1>
+	<button id="bt">发起异步请求</button>
+	<div id="conn"></div>
+	<script>
+		//按钮被单击时,发起异步请求
+		bt.onclick=function(){
+			//1.创建XHR对象
+			var xhr=new XMLHttpRequest;
+			//2 监听XHR对象的状态改变
+			xhr.onreadystatechange = function(){
+				/*console.log('XHR对象的状态改变啦'+xhr.readyState);
+				console.log('XHR对象获得的响应状态码'+xhr.status);
+				console.log('XHR对象获得的响应消息主体'+xhr.responseText)*/	
+				
+				if(xhr.readyState===4){ //响应数据接收完成
+					conn.innerHTML=xhr.responseText;
+				}
+			}
+			//3 打开到Web服务器的连接
+			xhr.open('GET','2.php',true);//open('请求方法',url,isAsync是不是异步请求);
+			//4 发送请求消息
+			xhr.send(null);  //send(参数是请求消息主体); 只有post和put有请求主体
+
+		}
+	</script>
+</body>
+</html>

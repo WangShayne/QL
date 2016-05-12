@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<img src="images/1.jpg" alt="">
+	<img src="images/2.jpg" alt="">
+	<img src="images/3.jpg" alt="">
+	<img src="images/4.jpg" alt="">	
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('img').click(function(){
+			$(this).animate({
+				width:"300px",
+				opacity:0
+			},2000,function(){
+				$(this).remove()
+			})
+		})
+	</script>
+</body>
+</html>

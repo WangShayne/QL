@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#target{
+			border:1px solid #e4393c;
+			border-radius:6px;
+			background:#eee;
+			width:50px;
+			height:50px;
+			position:absolute;
+			}
+	</style>
+</head>
+
+<body>
+	<button id="bt1">开始动画</button>
+<div id="target"></div>
+  <script src="js/jquery-1.11.3.js"></script>
+<script>
+	$('#bt1').click(function(){
+		$('#target').animate({
+			left:"300px",
+			top:"200px",
+			width:"100px",
+			height:"100px",
+			opacity:'0',
+			borderWidth:"100px",
+		},5000)
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>jquery事件处理--事件代理</h1>
+	<a href="">添加新按钮</a>
+	<div id="parent">
+		<button id="btn1">BTN1</button>
+		<button id="btn2">BTN2</button>
+		<button id="btn3">BTN3</button>
+	</div>
+	
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+		$("#parent").delegate("button","click",function(event){
+			console.log(event.target)
+			console.log(this)
+			console.log($(event.target).html())
+		})
+		$('a').click(function(event){
+			event.preventDefault();
+			$('#parent').append('<button>btn4</button>')
+		})
+	</script>
+</body>
+</html>
