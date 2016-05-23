@@ -1,0 +1,14 @@
+<?php
+	header('Content-Type:application/json');
+	$ready=$_REQUEST['row'];
+	$sql="SELECT * FROM emp";
+	$conn=mysqli_connect('127.0.0.1','root','','tarena',3306);
+	mysqli_query($conn,"SET NAMES GBK");
+	$result=mysqli_query($conn,$sql);
+	$row=mysqli_fetch_assoc($result);
+	$row=mysqli_fetch_assoc($result);
+	var_dump($row);
+
+
+	
+?>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.msg{
+			border:1px solid #3a3;
+			border-radius:4px;
+			background:#dfd;
+			color:#3a3;
+			margin:30px 0;
+			padding:10px;
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>使用XHR发起HTTP请求--post请求</h1>  
+	<h3>成绩录入系统(异步提交版)</h3>
+	<!-- 	异步提交内容无需依赖表单 -->
+	学生姓名: <input type="text" id="stuName"><br>
+	语文成绩: <input type="text" id="chinese"><br>
+	数学成绩: <input type="text" id="math"><br>
+	<input type="button" id="btSave" value="保存记录">
+	<div class="msg">
+		<h3>记录保存成功</h3>
+		<p>服务器端返回如下消息:	<span></span>	</p>
+	</div>	
+	<script>
+		btSave.onclick=function(){
+			var xhr=new XMLHttpRequest;
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4){
+					if(xhr.status===200){
+						doResponse(xhr.responseText);
+					}
+				}
+			}
+
+			xhr.open('POST',"1_scoreinput.php",true);
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xhr.send("stuName="+stuName.value+"&chinese="+chinese.value+"&math="+math.value);
+			function doResponse(){
+							var msg=document.querySelector('.msg');
+							msg.style.display="block";
+							msg.getElementsByTagName("p")[0].innerHTML=xhr.responseText;
+			}
+		}
+	</script>
+</body>
+</html>

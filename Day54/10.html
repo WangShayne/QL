@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Canvas绘制国际象棋棋盘</h1>
+	<h3>颜色随机</h3>
+	<canvas width="400px" height="400px" id="c1"></canvas>
+	<script>
+		var ctx=c1.getContext('2d');
+		for(var r=50;r<400;r+=100){      
+			for(var i=0;i<400;i+=100){
+				ctx.fillStyle=color();
+				ctx.fillRect(r,i,50,50);
+				ctx.fillStyle=color();
+				ctx.fillRect(i,r,50,50)
+			}
+		}
+		function color(){
+			var r=parseInt(Math.random()*256);
+			var g=parseInt(Math.random()*256);
+			var b=parseInt(Math.random()*256);
+			return "rgb("+r+","+g+","+b+")";
+		}
+	</script>
+</body>
+</html>

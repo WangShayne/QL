@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>使用HTML5提供的验证属性以及input.validity属性,实现表单提交时自动弹出自定义的错误消息</h1>
+	<form action="">
+		用户名: <input type="text" name="uname" id="uname" required ><br>
+		密码: <input type="password" name="upwd" id="upwd" required minlength="4" maxlength="12"><br>
+		确认密码: <input type="password" name="rpwd" id="rpwd" required minlength="4" maxlength="12"><br>
+		年龄: <input type="number" name="age" id="age" min="18" max="30"><br>
+		邮箱: <input type="email" name="email" id="email"><br>
+		微博: <input type="url" name="weibo" id="weibo"><br>
+		手机: <input type="tel" name="phone" id="phone" pattern="^1[34578]\d{9}$"><br>
+		<input type="submit" value="提交">
+	</form>
+	<script>
+		uname.onblur=function(){
+			if(this.validity.valueMissing){
+				this.setCustomValidity("用户名不能为空");
+			}else{
+				this.setCustomValidity("");
+			}
+		}
+		upwd.onblur=function(){
+			if(this.validity.valueMissing){
+				this.setCustomValidity("密码不能为空");
+			}
+			else if(this.validity.tooShort){
+				this.setCustomValidity("输入的密码太短")
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+		rpwd.onblur=function(){
+			if(this.validity.valueMissing){
+				this.setCustomValidity("请输入确认密码");
+			}
+			/*else if(this.validity.tooShort){
+				this.setCustomValidity("输入的密码太短")
+			}*/
+			else if(this.value !== upwd.value){
+				this.setCustomValidity("两次输入的密码不相同")
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+		age.onblur=function(){
+			if(this.validity.badInput){
+				this.setCustomValidity('请输入数字');
+			}
+			else if(this.validity.rangeOverflow){
+				this.setCustomValidity("年龄太大了");
+			}
+			else if(this.validity.rangeUnderflow){
+				this.setCustomValidity("年龄太小了")
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+		email.onblur=function(){
+			if(this.validity.typeMismatch){
+				this.setCustomValidity('请输入正确的邮箱类型')
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+		weibo.onblur=function(){
+			if(this.validity.typeMismatch){
+				this.setCustomValidity('请输入正确的微博地址')
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+		phone.onblur=function(){
+			if(this.validity.patternMismatch){
+				this.setCustomValidity("请输入正确的手机号码")
+			}
+			else{
+				this.setCustomValidity("");
+			}
+		}
+	</script>
+</body>
+</html>

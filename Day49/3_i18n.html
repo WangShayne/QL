@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+		<h1>使用XHR接收服务器返回的响应--application/javascript</h1>
+		<button id='bt'>异步请求服务器的欢迎消息</button>
+		<div id="msgDiv"></div>
+		<script>
+			var btn=document.getElementById('bt');
+			btn.onclick=function(){
+				var xhr=new XMLHttpRequest;
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState===4){
+						if(xhr.status===200){
+							doResponse(xhr.responseText);
+						}
+					}
+				}
+				xhr.open('get','3_i18n.php',true);
+				xhr.send(null);
+				function doResponse(javascript){
+					eval(javascript);
+				}
+			}
+		</script>
+</body>
+</html>

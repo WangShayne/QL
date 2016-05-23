@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+	canvas{
+		background:#eee;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>为canvas上的图形图像添加事件监听</h1>
+  <canvas id="c3" width='500' height='500'></canvas>
+	<script>
+		var ctx= c3.getContext('2d');
+		ctx.fillStyle="#e33";
+		ctx.globalAlpha=0.5;
+		ctx.fillRect(200,200,100,100);
+		c3.onmousemove=function(event){
+			var x=event.offsetX;
+			var y=event.offsetY
+			if((200<=x<=300)&&(200<=y<=300)){
+				ctx.fillStyle="#e33";
+			ctx.globalAlpha=1;
+			ctx.fillRect(200,200,100,100);
+			}else{
+				ctx.clearRect(0,0,500,500)
+				ctx.fillStyle="#e33";
+		ctx.globalAlpha=0.5;
+		ctx.fillRect(200,200,100,100);
+			}
+		}
+	</script>
+</body>
+</html>

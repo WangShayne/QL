@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#vdo{
+			width:500px;
+		}
+		#controls{
+			width:50px;
+			height:50px;
+			border:2px solid white;
+			border-radius:50%;
+			position:absolute;
+			top:205px;
+			left:230px;
+			z-index:3;
+			text-align:center;
+			line-height:50px;
+			display:none;
+			cursor:pointer;
+			opacity:0.8;
+		}
+		#controls span{
+			display:block;
+			color:white;
+			transform: rotate(90deg);
+		}
+		
+	</style>
+</head>
+
+<body>
+	<h1>HTML5新特性--视频播放</h1>
+	<div id="vdo"><video src="resource/oceans-clip.mp4" width="500px" height="300px" loop id="video">您的浏览器不支持video播放</video>
+	<div id="controls"><span>▲</span></div></div>
+
+	<script>
+		//〓
+		//▲
+		vdo.onmousemove=function(){
+			controls.style.display="block";
+		}
+		controls.onclick=function(){
+			var video=document.getElementById('video');
+			if(video.paused){
+				video.play()
+				this.firstChild.innerHTML="〓";
+			}else{
+				video.pause();
+				this.firstChild.innerHTML="▲"
+			}       
+		}
+		vdo.onmouseout=function(){
+			controls.style.display="none";
+		}
+	</script>
+</body>
+</html>

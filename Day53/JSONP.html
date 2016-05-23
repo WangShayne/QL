@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>jsonp</h1>
+	<button id="bt">hhaha</button>
+	<script>
+		function doResponse(data){
+			console.log('开始处理服务器返回的数据...');
+			console.log(data);	
+		}
+		bt.onclick=function(){
+			var s=document.createElement('script');
+			s.src='http://176.1.12.202/Day53/1.php';
+			document.body.appendChild(s);	
+		}
+	</script>
+	
+</html>

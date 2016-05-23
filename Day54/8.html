@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ddd;
+			background:#eee;
+		}
+	</style>
+</head>
+
+<body>
+  <h1>HTML5新特性 ---- Canvas绘图</h1>
+  <h3>使用画笔绘制矩形</h3>
+  <canvas width='500' height="400" id="c1">您的浏览器不支持canvas绘图技术</canvas>
+  <script>
+		//canvas 是画布,可用于盛放绘制的内容:但是绘制必须使用画笔,---Graphics/Context
+		var ctx=c1.getContext('2d');
+		ctx.fillStyle="rgb(255,0,0)"
+		ctx.fillRect(400,0,100,80);
+		ctx.fillRect(0,0,100,80);
+		ctx.fillRect(200,0,100,80);
+		ctx.fillRect(0,160,100,80);
+		ctx.strokeStyle="rgb(122,147,255)"
+		ctx.strokeRect(0,320,100,80);
+		ctx.strokeRect(400,320,100,80);
+		ctx.strokeRect(200,320,100,80);
+		ctx.strokeRect(400,160,100,80);
+		ctx.strokeRect(100,0,100,80);
+		ctx.strokeRect(300,0,100,80);
+		ctx.strokeRect(0,80,100,80);
+		ctx.strokeRect(100,80,100,80);
+		ctx.strokeRect(200,80,100,80);
+		ctx.strokeRect(300,80,100,80);
+		ctx.strokeRect(400,80,100,80);
+		
+		ctx.fillRect(200,160,100,80);
+		
+	console.log(ctx);
+  </script>
+</body>
+</html>

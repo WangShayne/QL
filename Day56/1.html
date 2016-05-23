@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<canvas id="c1" width="500" height="400"></canvas>
+	<script src="js/Chart.js"></script>
+	<script>
+		//注意:新版本与老版本的不同!
+		Chart.defaults.global.responsive=false; //全局不适用响应式
+		
+		var chart=new Chart(c1,{
+			//type:'bar',
+			type:'pie',
+			data:{
+				labels:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+				datasets:[{
+					label:'市场I部销售额',
+					data:[3500,2200,8100,3000,1548,2313,8481,215,5640,1234,3456,4165],
+					backgroundColor:[
+						"#6600cc",
+						"#1234cc",
+						"#caa23c",
+						"#1120cc",
+						"#6a56cc",
+						"#245acc",
+						"#66ff33",
+						"#ff3333",
+						"#cc0033",
+						"#339933",
+						"#00ff33",
+						"#ff6600"
+					]
+				},{
+					label:'市场II部销售额',
+					data:[2500,2400,1100,6000,1148,8713,1481,515,1640,1834,9456,2165],
+					backgroundColor:[
+						"#245acc",
+						"#66ff33",
+						"#ff3333",
+						"#cc0033",
+						"#339933",
+						"#00ff33",
+						"#ff6600",
+						"#6600cc",
+						"#1234cc",
+						"#caa23c",
+						"#1120cc",
+						"#6a56cc",
+						"#245acc",
+						"#66ff33"
+					]
+				}]
+			},
+			/*options:{
+				responsive:false,
+			}*/
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</body>
+</html>

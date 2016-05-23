@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<link rel="icon" href="img/favicon.ico">
+	<link href="common.css" type="text/css" rel="Stylesheet" />
+	<link href="jquery-ui-1.11.4/jquery-ui.css" type="text/css" rel="Stylesheet" />
+
+	<style>
+		.modal{
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background:rgba(0,0,0,0.5);
+			z-index:4;
+		}
+		.modal-dialog{
+			position:absolute;
+			top:10%;
+			left:35%;
+			z-index:5;
+		}
+		.modal-content{
+			width:380px;
+			height:270px;
+			padding:10px;
+			background:rgba(255,255,255,1);
+			border:1px solid #ddd;
+			border-radius:4px;
+			box-shadow:0px 0px 10px black;
+		}
+		.modal-content p{
+			font-weight:bold;
+			font-size:2em;
+			margin-top:20px;
+		}
+		.modal-content span{
+			display:block;
+			margin-top:20px;
+			width:100%;
+			height:25px;
+			line-height:25px;
+			border-radius:4px;
+			background:#FECFE1;
+			border:1px solid #AE656F;
+		}
+		.input{
+			width:100%;
+			height:25px;
+			border:1px solid #ddd;
+			border-radius:4px;
+		}
+		.mar{
+			margin-top:20px;
+		}
+		.sub{
+			width:100%;
+			height:30px;
+			margin-top:20px;
+			background:#e4393c;
+			color:#ffffff;
+			cursor:pointer;
+		}
+		.main{
+			width: 1211px;
+			height:650px;
+			margin: 0px auto;
+			background:#F7F7F7;
+		}
+		.main-left{
+			padding:15px;
+			width: 180px;
+			min-height: 300px;
+			background:#F7F7F7;
+			float: left;
+		}
+		.main-right{
+			margin-left:210px;
+			padding-top:20px;
+			min-height: 300px;
+			background:#F7F7F7;
+		}
+		.main-left p{
+			font-size:2em;
+			text-align:center;
+		}
+		.main-left li{
+			text-align:center;
+			margin-top:20px;
+			cursor:pointer;
+		}
+		a{
+			text-decoration:none;
+		}
+		a:hover{
+			text-decoration:none;
+		}
+		.main-left .hover a{
+			color:red;
+		}
+		.hide{
+			display:none;
+		}
+		.active{
+			display:block;
+		}
+		#tb {
+		  border: 1px solid #eee;
+		  border-collapse: collapsed;
+		  border-spacing: 0;
+		  width: 100%;
+		  height:280px;
+		}
+		#tb thead tr {
+		  background: #eaeaea;
+		}
+		#tb th{
+		padding: 6px 10px;
+		  text-align: center;
+		}
+		#tb td {
+		  	padding: 6px 10px;
+		  text-align: center;
+		
+		}
+		#tb tbody tr:nth-child(odd) {
+		  background: transparent; 
+		}
+		#tb tbody tr:nth-child(odd) a {
+		  margin-left: 60px;
+		}
+		#tb tbody tr:nth-child(even) td {
+		  background: #fff;
+		    border: 1px solid #eee;
+		}
+		#tb tbody tr:nth-child(even) img {
+		  border: 1px solid #eee;
+		  padding: 4px;
+		  vertical-align: middle;
+		}
+		#page_list a{
+			float:left;
+			width:30px;
+			height:30px;
+			margin:20px 20px 0px 0px;
+			border:1px solid #ddd;
+			border-radius:4px;
+			line-height:30px;
+			text-align:center;
+			cursor:pointer;
+		}
+		#page_list .act{
+					border:none;
+					cursor:default;
+		}
+		#page_list a:hover{
+			color:#666666;
+		}
+		
+	</style>
+	<title>京东</title>
+</head>
+
+<body>
+	<div class="header"></div>
+	<div class="main">
+		<div class='main-left'>
+			<p>我的京东</p>
+			<ul>
+				<li><a data-toggle="item" href='main-right-order'>我的订单</a></li>
+				<li><a data-toggle="item" href='main-right-consume'>消费记录</a></li>
+				<li><a data-toggle="item" href='main-right-lucky'>幸运抽奖</a></li>
+			</ul>	
+		</div>
+		<div class="main-right">
+			<div class="main-right-order hide" id='order'>
+				<table id="tb">
+					<thead>
+						<tr>
+							<th></th>
+							<th>订单信息</th>
+							<th>收货人</th>
+							<th>订单金额</th>
+							<th>
+								<select name="" id="">
+								<option value="m1">最近1个月</option>
+								<option value="m3">最近3个月</option>
+								<option value="m6">最近6个月</option>
+								</select>
+							</th>
+							<th>
+								<select name="" id="">
+								<option value="0">全部状态</option>
+								<option value="1">等待付款</option>
+								<option value="2">派货中</option>
+								<option value="3">运输中</option>
+								<option value="4">订单完成</option>
+								<option value="5">订单无效</option>
+							</select>
+							</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+				<ul id="page_list">
+				
+				</ul>	
+			</div>
+			<div class="main-right-consume hide" id='consume'></div>
+			<div class="main-right-lucky hide" id='lucky'></div>
+		</div>
+	</div>
+	<div class="footer"></div>	
+<!-- 固定定位的模态框--用户登录	 -->
+
+<div class="modal">	<!-- 半透明遮罩层   style="display:none"-->
+	<div class="modal-dialog"><!-- 宽度 定位  -->
+			<div class="modal-content"><!-- 背景色/边框/倒角/阴影		 -->
+				<p>会员登录</p>
+				<span class="msg">请保管好您的注册信息，仅防丢失。</span><br>
+				<form>
+					<input type="text" name='uname'  class="input" placeholder="请输入您的用户名"><br>
+					<input type="password" name='upwd' class="input mar" placeholder="请输入您的密码"><br>
+				</form>
+				<input type="button" class="sub" id="sub" value="登录">
+			</div>
+	</div>
+</div>	
+<script src="js/jquery-1.11.3.js"></script>
+ <script src="js/jd.js"></script>
+</body>
+</html>

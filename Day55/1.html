@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			background:#F2f2f2;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>canvas绘图</h1>
+	<canvas width='500' height='500' id='c1'>您的浏览器不支持canvas绘图</canvas>
+	<script>
+		var ctx=c1.getContext('2d');
+		ctx.beginPath();
+		ctx.moveTo(0,0);
+		ctx.lineTo(500,500);
+		ctx.closePath();
+		ctx.lineWidth=5;
+		ctx.strokeStyle="#f00"
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(500,0);
+		ctx.lineTo(0,500)
+		ctx.lineWidth=5;
+		ctx.strokeStyle="#0ff";
+		ctx.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		svg{
+			background:#eee;
+		}
+		.line{
+			fill:#eee;
+			stroke:#cce;
+			stroke-width:2;
+		}
+	</style>
+	
+</head>
+
+<body>
+	<h1>SVG图像鼠标悬停</h1>
+	<svg width="500" height="400">
+		<rect width='20' height='108' x='60' y='242' fill="#af2"></rect>
+	</svg>
+		<script>
+		var data={"1月":5410,"2月":3851,"3月":2154,"4月":8411,"5月":9540,"6月":3000,"7月":2016,"8月":3159,"9月":4410,"10月":6540,"11月":1285,"12月":9512}
+		var svg=document.getElementsByTagName('svg')[0];
+		var svgWidth=svg.width.baseVal.value;
+		var svgHeight=svg.height.baseVal.value;
+		var padding=50;
+		var origin={x:padding,y:svgHeight-padding};
+		var xEnd={x:400,y:origin.y}
+		var yEnd={x:padding,y:padding}
+		/*X轴*/
+		var xLine=document.createElementNS('http://www.w3.org/2000/svg',"polyline"); //创建X轴
+		xLine.setAttribute("class","line")
+		xLine.setAttribute("points",(origin.x+','+origin.y+' '+xEnd.x+','+xEnd.y+' '+(xEnd.x-10)+','+(xEnd.y-5)+' '+xEnd.x+','+xEnd.y+' '+(xEnd.x-10)+','+(xEnd.y+5)))
+		svg.appendChild(xLine);
+		console.log(yEnd)
+		/*Y轴*/
+		var yLine=document.createElementNS('http://www.w3.org/2000/svg',"polyline");
+		yLine.setAttribute("class","line");
+		yLine.setAttribute("points",(origin.x+','+origin.y+' '+yEnd.x+','+yEnd.y+' '+(yEnd.x-5)+','+(yEnd.y+10)+' '+yEnd.x+','+yEnd.y+' '+(yEnd.x+5)+','+(yEnd.y+10)))
+		svg.appendChild(yLine);
+	</script>
+</body>
+</html>

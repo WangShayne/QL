@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Canvas绘制国际象棋棋盘</h1>
+	<h3>黑白交错</h3>
+	<canvas width="400px" height="400px" id="c1"></canvas>
+	<script>
+		var ctx=c1.getContext('2d');
+		for(var r=50;r<400;r+=100){      
+			for(var i=0;i<400;i+=100){
+				ctx.fillRect(r,i,50,50);
+				ctx.fillRect(i,r,50,50)
+			}
+		}
+	</script>
+</body>
+</html>

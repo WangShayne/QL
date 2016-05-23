@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>HTML5新特性____表单新特性</h1>
+	<h3>新的表单元素</h3>
+	<form action="9.php">
+		<datalist id="dishes">
+			<option>鱼香肉丝</option>
+			<option>京酱肉丝</option>
+			<option>青椒肉丝</option>
+		</datalist>
+		我要购买:<input type="text" name='order' list="dishes" autocomplete='off'><br>
+		
+		下载进度: <progress name='download'></progress><br>
+		投诉处理进度: <progress name='tousuchulijindu' value='50' max='100'></progress><br>
+
+		机油量<meter id='m1' min='0' max='100' value='90' low='30' high='70' optimum='60'><span id="msg1"></span></meter><br>
+		PM2.5<meter id='m2' min='0' max='500' value='90' low='10' high='300' optimum='50'><span id="msg2"></span></meter><br>
+			
+		单价: <input type="text" value='3.5' readonly id='price'><br>
+		数量: <input type="number" min='1' value="1" id="count"><br>
+		小计: <output id='taoal'></output>
+		<input type="submit"	 value='提交'>
+	</form>
+	<script>
+		var value=0;
+		var timer= setInterval(function(){
+			value+=5;
+			m2.value=value;
+			msg2.innerHTML=value
+			if(value>=500){
+				clearInterval(timer)
+			}
+		})
+	</script>	
+</body>
+</html>

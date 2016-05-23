@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.container{
+			padding:10px;
+		}
+		.dish{
+			border-bottom:1px solid #ddd;
+		}
+		#btLoadMore{
+			display:block;
+			line-height:2em;
+			width:100%;
+		}
+	</style>
+</head>
+
+<body>
+  	<h1>XHR接收响应消息_____application/json</h1>
+	<h3>点击"加载更多"按钮加载更多的菜品信息</h3>
+	<div class="container">
+	<!--	<div class="dish">
+			<img src="img/1.jpg" alt="">
+			<h4>鱼香肉丝</h4>
+			<p>价格:¥20</p>
+		</div> -->
+	</div>
+	<button id="btLoadMore">加载更多</button>	
+	<script>
+		var btLoadMore=document.getElementById('btLoadMore');
+		var container=document.querySelector('.container');
+		btLoadMore.onclick=function(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4){
+					if(xhr.status===200){
+						doResponse(xhr.responseText);
+					}else{
+						console.log('页面已请求,但未加载.');
+					}
+				}
+			}
+			xhr.open('get','5.php',true);
+			xhr.send(null);
+			function doResponse(json){
+				var arr=JSON.parse(json);
+				for(var i=0;i<arr.length;i++){
+					var result=arr[i];
+					container.innerHTML+="<div class=dish><img src="+result['img']+">"+"<h4>"+result['name']+"</h4>"+"<p>价格:¥"+result['price']+"</p></div>";
+				}
+			} 
+		}
+	</script>
+</body>
+</html>

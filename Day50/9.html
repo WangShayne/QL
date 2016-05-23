@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#msg{
+			width:100%;
+			height:100px;
+			border:1px solid #3a3;
+			background:#dfe;
+			display:none;
+			padding:10px;
+			margin:10px;
+		}
+	</style>
+</head>
+
+<body>
+  	<h1>jQuery AJAX POST成绩录入系统</h1>
+	姓名: <input type="text" name="uname" id='uname'><br>
+	语文: <input type="text" name="chinese" id='chinese'><br>
+	数学: <input type="text" name="math" id='math'><br>
+	<button id='bt'>成绩录入</button>
+	<div id="msg">
+		
+	</div>
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+		$('#bt').click(function(){
+			var uname=$('#uname').val();
+			var chinese=$('#chinese').val();
+			var math=$('#math').val();
+			$.post('9.php',{uname:uname,chinese:chinese,math:math},function(data){
+				$('#msg').html(data).css('display',"block");
+			});
+		});
+	</script>
+</body>
+</html>

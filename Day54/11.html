@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Canvas绘制国际象棋棋盘</h1>
+	<h3>使用渐变色</h3>
+	<canvas width="500px" height="500px" id="c1"></canvas>
+	<script>
+		var ctx=c1.getContext('2d');
+		var linearGradient=ctx.createLinearGradient(0,0,0,500)
+		linearGradient.addColorStop(0,"#f00");
+		linearGradient.addColorStop(0.5,"#ff0");
+		linearGradient.addColorStop(1,"#0f0");
+		ctx.fillStyle=linearGradient;
+		ctx.fillRect(0,0,500,500);
+		ctx.clearRect(100,150,100,100);
+		ctx.clearRect(300,150,100,100);
+	</script>
+</body>
+</html>

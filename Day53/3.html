@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#div{
+			width:200px;
+			height:200px;
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div id="div">1</div>
+
+	红: <input type="range" min="0" max='255' value='0' name='R'><span id='r'>0</span><br>
+	绿: <input type="range" min="0" max='255' value='0' name='G'><span id='g'>0</span><br>
+	蓝: <input type="range" min="0" max='255' value='0' name='B'><span id='b'>0</span><br>
+	<script>
+	/*	var rangeList=document.querySelectorAll('[type="range"]');
+		for(var i=0;i<rangeList.length;i++){
+			var range=rangeList[i];
+			range.onchange=function(){
+				this.nextSibling.innerHTML=this.value
+				changeDivBG(this.name,this.value)
+			}
+		
+			var r=0;
+			var g=0;
+			var b=0;
+			function changeDivBG(color,value){
+				if(color==='R') r=value;
+				else if(color==="G") g=value;
+				else if(color==="B") b=value;
+				div.style.background='rgb('+r+','+g+','+b+')';
+			}
+		}
+	*/
+	</script>
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+		var color={R:0,G:0,B:0};
+		$('[type="range"]').change(function(){
+			$(this).next().html($(this).val());
+			color[this.name]=this.value;
+			$('#div').css('background','rgb('+color['R']+','+color['G']+','+color['B']+')')
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<script type="text/javascript" src='js/jquery-1.11.3.js'></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:"GET",
+			url:'22.php',
+			data:{uname:'Tom',age:21},
+			beforeSend:function(){
+				console.log('beforeSend回调函数,,,请求即将被发送');
+				console.log(arguments);
+			},
+			success:function(){
+				console.log('success回调函数,,,响应完成且成功');
+				console.log(arguments);
+			},
+			error:function(){
+				console.log('error回调函数,,,响应完成但存在问题');
+				console.log(arguments);
+			},
+			complete:function(){
+				console.log('complete回调函数,,,响应完成');
+				console.log(arguments);
+			},
+		});
+	</script>
+</body>
+</html>

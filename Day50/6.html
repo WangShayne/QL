@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>jQuery AJAX---动态的下拉列表</h1>
+	<h3>添加新员工</h3>
+	新员工姓名: <input type="text" name="name"><br>
+	新员工性别: 男<input type="radio" name="gender" value="男">女<input type="radio" name="gender" value="女"><br>
+	所在部门: <select name="select" id="dept"></select>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('#dept').load("6.php");
+	</script>
+</body>
+</html>

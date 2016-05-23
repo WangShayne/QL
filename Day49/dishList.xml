@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding="utf-8" ?>
+<dishList>
+	<dish dno="101">
+		<name>京酱肉丝</name>
+		<price>20</price>
+		<img>1.jpg</img>		
+	</dish>
+	<dish dno="102">
+		<name>青椒肉丝</name>
+		<price>20</price>
+		<img>2.jpg</img>		
+	</dish>
+	<dish dno="103">
+		<name>鱼香肉丝</name>
+		<price>20</price>
+		<img>3.jpg</img>		
+	</dish>
+</dishList>

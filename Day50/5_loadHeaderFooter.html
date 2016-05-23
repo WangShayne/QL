@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#header{
+			width:100%
+			border:1px solid #ddd;
+		}
+		#main{
+			width:100%;
+			height:300px;
+			background:red;
+		}
+		#footer{
+			width:100%
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+		<div id="header"><img src="img/loading.gif" alt="">页头加载中，请稍后...</div>
+		<div id="main">这里是主体内容</div>
+		<div id="footer"><img src="img/loading.gif" alt="">页尾加载中，请稍后...</div>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+			$('#header').load('5_loadHeader.php');
+			$('#footer').load('5_loadFooter.php');
+
+				/**头部请求**/
+		/*	window.onload=function(){
+				var xhr1=new XMLHttpRequest;
+				xhr1.onreadystatechange=function(){
+					if(xhr1.readyState===4){
+						if(xhr1.status===200){
+							header.innerHTML=xhr1.responseText;
+						}
+					}
+				}
+				xhr1.open('get','5_loadHeader.php?header=header',true);
+				xhr1.send(null);
+				/*底部请求*/
+				/*var xhr2=new XMLHttpRequest;
+				xhr2.onreadystatechange=function(){
+					if(xhr2.readyState===4){
+						if(xhr2.status===200){
+							footer.innerHTML=xhr2.responseText;
+						}
+					}
+				}
+				xhr2.open('get','5_loadFooter.php?footer=footer',true)
+				xhr2.send(null);
+			}*/
+		</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.dish{
+			border:1px solid #3a3;
+			background:#efe;
+			color:#3a3;
+			display:inline-block;
+			width:100px;
+			height:100px;
+		}
+		.pager{
+			list-style:none;
+			padding:0;
+			margin:20px 0;
+		}
+		.pager li{
+			display:inline-block;
+			border:1px solid #aaa;
+			background:#eee;
+		}
+		.pager li a{
+			color:#333;
+			text-decoration:none;
+			line-height:2em;
+			padding:10px 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>使用jQuery对AJAX的封装函数 ---$.get()</h1>
+	<div class='container'>
+<!-- 		<div class="dish">京酱肉丝</div> -->
+<!-- 		<div class="dish">青椒肉丝</div> -->
+<!-- 		<div class="dish">鱼香肉丝</div> -->
+	</div>
+	<ul class='pager'>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+	</ul>		
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+		$('.pager a').click(function(event){
+				event.preventDefault();
+				var x=$(this).html();
+				$.get('7.php',{pager:x},function(json){
+					console.log(arguments);
+					//var arr=JSON.parse(json);
+					/*for(var i=0,str='';i<json.length;i++){
+						str+="<div class=dish>"+json[i]+"</div>";
+						$('.container').html(str);
+					};*/
+					//清除原有的数据
+					$('.container').empty();
+					$.each(json,function(i,n){
+						$('.container').append("<div class='dish'>"+n+"</div>");
+					})
+				});
+		});
+	
+	</script>
+</body>
+</html>

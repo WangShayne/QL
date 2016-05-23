@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>把JSON字符串解析为js对象</h1>
+	<script>
+		var jsonString='[10,20,50]';
+		console.log(typeof jsonString);
+
+		//XML DOM对象 :JSON
+		var result=JSON.parse(jsonString);
+		console.log(typeof result);
+		console.log(result)
+		
+		var jsonString='{"uname":"王帅","age":1.6}';
+		console.log(typeof jsonString);
+		var result=JSON.parse(jsonString);
+		console.log(typeof result);
+		console.log(result);
+	</script>
+</body>
+</html>

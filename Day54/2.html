@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>表单元素的新属性---输入验证属性</h1>
+	<h2>修改验证消息的提示时间---失去焦点</h2>
+	<h3>修改验证消息的内容</h3>
+	<form action="2.php">
+		用户名: <input type="text" name="uname" required  minlength='3' maxlength='8' id="uname"><br>
+		手机号码: <input type="text" name='phone' pattern="^1[34578]\d{9}$"><br>
+		年龄: <input type="number" name="age" id="age" min="18" max='30'><br>
+		邮箱: <input type="email" id="email"><br>
+		<input type="submit">	
+	</form>
+	<script>
+	uname.onblur=function(){
+		if(this.validity.valueMissing){
+			alert('用户名不能为空');
+		}
+		if(this.validity.tooShort){
+			alert("用户名太短了");
+		}
+	}
+	age.onblur=function(){
+		if(this.validity.badInput){
+			alert("只能输入数字,不能输入其他字符");
+		}
+		if(this.validity.rangeUnderflow){
+			alert("年龄太小!")
+		}
+		if(this.validity.rangeOverflow){
+			alert("年龄太大!")
+		}
+	}
+	email.onblur=function(){
+		if(this.validity.typeMismatch){
+			alert('输入类型不匹配')	
+		}
+	}
+	</script>
+</body>
+</html>

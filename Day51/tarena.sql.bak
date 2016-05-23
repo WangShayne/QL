@@ -1,0 +1,41 @@
+##设置编码语言 
+SET NAMES GBK;
+##删除已有的tarena库
+DROP DATABASE IF EXISTS tarena;
+##创建新的tarena库
+CREATE DATABASE tarena CHARSET=GBK;
+##使用tarena库
+USE tarena;
+##创建员工列表,包含员工编号,员工姓名,性别,生日,部门
+CREATE TABLE emp(
+	eno INT PRIMARY KEY AUTO_INCREMENT,
+	ename VARCHAR(32),
+	gender VARCHAR(32),
+	birthday LONG,
+	dept VARCHAR(32)
+);
+##添加员工
+SET NAMES GBK;
+INSERT INTO emp VALUES(NULL,'Tom','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Mary','女',888891238855,'会计部');
+INSERT INTO emp VALUES(NULL,'王帅','男',88889658855,'打杂部');
+INSERT INTO emp VALUES(NULL,'Aaron','男',88889658855,'法务部');
+INSERT INTO emp VALUES(NULL,'Adolph','男',88889658855,'研发部');
+INSERT INTO emp VALUES(NULL,'Jack','男',88889658855,'研发部');
+INSERT INTO emp VALUES(NULL,'Justin','男',88889658855,'宣传部');
+INSERT INTO emp VALUES(NULL,'Otto','男',88889658855,'法务部');
+INSERT INTO emp VALUES(NULL,'Anna','男',88889658855,'秘书部');
+INSERT INTO emp VALUES(NULL,'Ted','男',88889658855,'宣传部');
+INSERT INTO emp VALUES(NULL,'Tyler','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Ulysses','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Wayne','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Will','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Wordsworth','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Zebulon ','男',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Betty','女',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Blanche','女',8889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Beatrice','女',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Ella','女',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Dolores','女',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Genevieve','女',88889658855,'行政部');
+INSERT INTO emp VALUES(NULL,'Lorraine','女',88889658855,'行政部');

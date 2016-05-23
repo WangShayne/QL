@@ -1,0 +1,20 @@
+[
+	{
+		"dno":101,
+		"name":"鱼香肉丝",
+		"price":20,
+		"img":"img/1.jpg"
+	},
+	{
+		"dno":102,
+		"name":"京酱肉丝",
+		"price":25,
+		"img":"img/2.jpg"
+	},
+	{
+		"dno":103,
+		"name":"青椒肉丝",
+		"price":18,
+		"img":"img/3.jpg"
+	}
+];

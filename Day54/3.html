@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>表单元素的新属性---输入验证属性</h1>
+	<h2>修改验证消息的提示时间---失去焦点</h2>
+	<h3>修改验证消息的内容</h3>
+	<form action="2.php">
+		用户名: <input type="text" name="uname" required  minlength='3' maxlength='8' id="uname"><br>
+
+		<input type="submit">	
+	</form>
+	<script>
+	uname.onblur=function(){
+		if(this.validity.valueMissing){
+			this.setCustomValidity('您尚未填写用户名');
+		}
+		if(this.validity.tooShort){
+			this.setCustomValidity('用户名长度不能少于3')
+		}
+	}
+	</script>
+</body>
+</html>

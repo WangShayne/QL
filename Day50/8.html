@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.keyong{
+			color:green;
+		}
+		.bukeyong{
+			color:red;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>jQuery AJAX get 验证用户名是否存在</h1>
+	用户名: <input type="text" name="uname" id="uname"><span id="msg"></span>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$('#uname').blur(function(){
+			var uname=$(this).val();
+			console.log(uname);
+			if(!uname){
+				$('#msg').html('')
+				return;
+			}
+			$.get('8.php',{uname:uname},function(data){
+			if(data=="exists"){
+				$('#msg').html("用户名已被占用").addClass('bukeyong').removeClass('keyong');
+			}else{
+				$('#msg').html("用户名可用").addClass('keyong').removeClass('bukeyong');
+			}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>根据数据绘制表格</h1>
+	<canvas width="900" height="600" id="c1"></canvas>
+	<script>
+		var data={"1月":5800,"2月":6800,"3月":4800,"4月":7800,"5月":1800,"6月":3800,"7月":2800,"8月":12000,"9月":3500,"10月":5000,"11月":2000,"12月":6000,};
+		var arr=[];
+		for(var k in data){
+			arr.push(k);
+		}
+		var ctx=c1.getContext('2d');
+		var Xspace=(900/(arr.length*2+1));
+		var l=Xspace;
+		var x=Xspace;
+		var y=0;
+		var arr1=[];
+		for(var i=0;i<arr.length;i++){
+			var Yspace=data[arr[i]]/40;
+			var s=Yspace;
+			y=500-s;
+			if(data[arr[i]]<=2000){
+				ctx.fillStyle="#00ff00";
+			}else if(data[arr[i]]<=5000){
+				ctx.fillStyle="#ff9900";
+			}else{
+				ctx.fillStyle="#ff0000";
+			}
+			ctx.fillRect(x,y,l,s);
+			ctx.font="20px Arial";
+			ctx.fillText(data[arr[i]],x,y)
+			ctx.fillStyle="#000";
+			ctx.fillText(arr[i],x,y+s+20)
+			x=x+l+Xspace;
+		}
+		function rc(){
+			var r=Math.floor(Math.random()*256);
+			var g=Math.floor(Math.random()*256);
+			var b=Math.floor(Math.random()*256);
+			return "rgb("+r+","+g+","+b+")";
+		}
+	</script>
+</body>
+</html>

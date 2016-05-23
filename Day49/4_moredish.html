@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		#btLoadMore{
+			display:block;
+			width:100%;
+			margin:10px 0;
+			line-height:2em;
+		}
+		.dish{
+			border-bottom:1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>使用XHR读取服务器端的响应--XML字符串格式</h1>
+	<div class="container">
+<!-- 		<div class="dish"> -->
+<!-- 			<img src="img/1.jpg" alt=""> -->
+<!-- 			<h4>菜名:京酱肉丝</h4> -->
+<!-- 			<p>价格:$20</p> -->
+<!-- 		</div> -->
+	</div>
+	<button id='btLoadMore'>加载更多</button>
+	<script>
+		btLoadMore.onclick=function(){
+			var xhr=new XMLHttpRequest;
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4){
+					if(xhr.status===200){
+						doResponse(xhr.responseXML);
+					}else{
+						alert('响应完成,但有问题');
+					}
+				}
+			}
+			xhr.open('get','4_moredish.php',true);
+			xhr.send(null);
+			function doResponse(xml){
+				var dish,img,name,price,dishDiv,dno;
+				dishes=xml.getElementsByTagName('dish');
+				dishDiv=document.querySelector('.container');
+				for(var i=0;i<dishes.length;i++){
+					var dish=dishes[i];
+					dno=dish.getAttribute('dno');
+					name='<h4>菜名:'+dish.children[0].innerHTML+"</h4>";
+					img='<img src='+dish.children[2].innerHTML+">";
+					price='<p>价格:'+dish.children[1].innerHTML+'</p>';
+					dishDiv.innerHTML+="<div class='.dish' dno="+dno+">"+img+name+price+"</div>";
+				}
+			
+			}
+		}
+	</script>
+</body>
+</html>

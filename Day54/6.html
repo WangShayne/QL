@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+	.container{
+		text-align:center;
+		position:relative;
+	}
+		#bt-control{
+			position:absolute;
+			left:50%;
+			margin-left:-50px;
+			top:50%;
+			margin-top:-50px;
+			background:rgba(255,255,255,0.2);
+			border-radius:50%;
+		}
+		#bt-control img{
+			width:100px;
+		}
+	</style>	
+</head>
+
+<body>
+	<h1>视屏播放器</h1>
+	<div class="container">
+		<video src="resource/oceans-clip.mp4" width="500" height="300">您的浏览器不支持播放器</video>
+		<a href="#" id="bt-control">
+			<img src="img/play.png" alt="">
+		</a>
+	</div>
+	<script>
+		var bt=document.getElementById('bt-control');
+		var v=document.querySelector('video');
+		var img=bt.getElementsByTagName('img')[0];
+		bt.onclick=function(){
+			if(v.paused){
+				v.play();
+				img.src="img/pause.png";
+			}else{
+				v.pause();
+				img.src="img/play.png";
+			}
+		}
+	</script>
+</body>
+</html>

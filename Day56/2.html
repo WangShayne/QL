@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<script src='js/fusioncharts.js'></script>
+</head>
+
+<body>
+	<h1>Fusioncharts使用</h1>
+	<div id="myChart"></div>
+	<script>
+		var myData=[
+			{label:'1月',value:9150},	
+			{label:'2月',value:3150},	
+			{label:'4月',value:9110},	
+			{label:'5月',value:3460},	
+			{label:'6月',value:2350},	
+			{label:'7月',value:5450},	
+			{label:'8月',value:9120},	
+			{label:'9月',value:3150},	
+			{label:'10月',value:1150},	
+			{label:'11月',value:5150},	
+			{label:'12月',value:150}
+		];
+		new FusionCharts({
+			type:"pie2d",
+			renderAt:'myChart',
+			width:500,
+			height:400,
+			dataFormat:'json',
+			dataSource:{  //数据源
+				data:myData
+			}
+		}).render();
+	</script>
+</body>
+</html>

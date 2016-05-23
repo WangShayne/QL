@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style>
+		.yin{
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+	请选择产品
+	<select name="search" id="search">
+		<option value="">--请选择产品类型--</option>
+	</select>	
+	<select name="factory" id="factory" class="yin">
+		<option value="">--请选择品牌--</option>
+	</select>
+	<select name="xing" id="xing" class="yin">
+		<option value="">--请选择型号--</option>
+	</select>
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+	$().ready(function(){
+		$.ajax({
+			url:'3_1.php',
+			type:'GET',
+			data:'',
+			beforeSend:function(){},
+			success:function(json){
+				for(var k in json){
+					$('#search').append(
+						"<option value="+k+'>'+json[k]+"</option>"
+					)
+				}
+			},
+			error:function(){},
+			complete:function(){},
+		});
+	});
+	$('#search').change(function(){
+		var type=$(this).val();
+		$.ajax({
+			url:'3_2.php',
+			type:'GET',
+			data:{'type':type},
+			beforeSend:function(){},
+			success:function(json){
+				$('#factory').removeClass('yin');
+				$('#xing').addClass('yin');
+				$('#factory').html('<option value="">--请选择品牌--</option>')
+				for(var k in json){
+					$('#factory').append(
+						"<option value="+k+">"+json[k]+"</option>"
+					)
+				}
+			},
+			error:function(){},
+			complete:function(){},
+		});
+	});
+	$('#factory').change(function(){
+		var type=$('#search :selected').val();
+		var xing=$(this).val();
+		$.ajax({
+			url:'3_3.php',
+			type:'GET',
+			data:{'type':type,'xing':xing},
+			beforeSend:function(){},
+			success:function(json){
+				console.log(json)
+				$('#xing').removeClass('yin');
+				$('#xing').html('<option value="">--请选择型号--</option>');
+				for(var i=0;i<json.length;i++){
+					for(var k in json[i]){
+						$('#xing').append(
+							"<option value="+k+">"+json[i][k]+"</option>"
+						);
+					}
+				}
+			},
+			error:function(){},
+			complete:function(){},
+		})
+	})
+
+	</script>
+</body>
+</html>
